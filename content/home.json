@@ -128,13 +128,6 @@
     },
     {
       "section": "Главная / Каталог",
-      "label": "Мерч: надпись",
-      "type": "text",
-      "selector": "[data-edit=\"catalog-merch-kicker\"]",
-      "value": "каталог"
-    },
-    {
-      "section": "Главная / Каталог",
       "label": "Мерч: заголовок",
       "type": "text",
       "selector": "[data-edit=\"catalog-merch-title\"]",
@@ -154,13 +147,6 @@
       "selector": "[data-edit=\"catalog-form-img\"]",
       "value": "assets/home/form-flatlays.jpg",
       "attr": "src"
-    },
-    {
-      "section": "Главная / Каталог",
-      "label": "Форма: надпись",
-      "type": "text",
-      "selector": "[data-edit=\"catalog-form-kicker\"]",
-      "value": "каталог"
     },
     {
       "section": "Главная / Каталог",
@@ -322,68 +308,26 @@
       "value": "Чистые швы, точность соединений и отдельная технологическая проработка."
     },
     {
-      "section": "Блок УТП",
+      "section": "Разделитель кейсов",
       "label": "Картинка",
       "type": "image",
-      "selector": "[data-edit=\"company-img\"]",
-      "value": "assets/home/utp-patterns-photo.jpg",
+      "selector": "[data-edit=\"cases-intro-img\"]",
+      "value": "assets/named/editorial-01-white-fabric.jpg",
       "attr": "src"
     },
     {
-      "section": "Блок УТП",
+      "section": "Разделитель кейсов",
       "label": "Заголовок",
       "type": "textarea",
-      "selector": "[data-edit=\"company-title\"]",
-      "value": "Делаем корпоративную одежду, которая работает."
+      "selector": "[data-edit=\"cases-intro-title\"]",
+      "value": "Разговор о подходе имеет смысл только в момент, когда он сталкивается с реальностью."
     },
     {
-      "section": "Блок УТП",
+      "section": "Разделитель кейсов",
       "label": "Описание",
       "type": "textarea",
-      "selector": "[data-edit=\"company-copy-1\"]",
-      "value": "От простых тиражей до сложных системных решений. Мерч, форма, коллекции — все, что связано с одеждой в b2b."
-    },
-    {
-      "section": "Блок УТП",
-      "label": "Пункт 1",
-      "type": "text",
-      "selector": "[data-edit=\"company-li-1\"]",
-      "value": "Сделаем тираж мерча."
-    },
-    {
-      "section": "Блок УТП",
-      "label": "Пункт 2",
-      "type": "text",
-      "selector": "[data-edit=\"company-li-2\"]",
-      "value": "Соберем форму для команды."
-    },
-    {
-      "section": "Блок УТП",
-      "label": "Пункт 3",
-      "type": "text",
-      "selector": "[data-edit=\"company-li-3\"]",
-      "value": "Разработаем коллекцию с нуля."
-    },
-    {
-      "section": "Блок УТП",
-      "label": "Пункт 4",
-      "type": "text",
-      "selector": "[data-edit=\"company-li-4\"]",
-      "value": "Реализуем сложный проект."
-    },
-    {
-      "section": "Блок УТП",
-      "label": "Финальная строка",
-      "type": "textarea",
-      "selector": "[data-edit=\"company-copy-2\"]",
-      "value": "Масштаб может быть разным. Подход — один: собрать решение точно."
-    },
-    {
-      "section": "Блок УТП",
-      "label": "Кнопка",
-      "type": "text",
-      "selector": "[data-edit=\"company-button\"]",
-      "value": "Заказать просчёт"
+      "selector": "[data-edit=\"cases-intro-copy\"]",
+      "value": "Расскажем про проекты, в которых это проявляется. Разные по масштабу и сложности, но одинаковые по уровню требований к результату."
     },
     {
       "section": "Разделитель дизайнеров",
@@ -417,23 +361,28 @@
     },
     {
       "section": "Первый экран",
-      "label": "Слайд 1: раздел",
+      "label": "Блок 1: раздел",
       "type": "text",
-      "selector": "[data-edit=\"hero-1\"]",
-      "value": "Интервью",
-      "attr": "data-eyebrow"
+      "selector": "[data-edit=\"hero-1-kicker\"]",
+      "value": "Интервью"
     },
     {
       "section": "Первый экран",
-      "label": "Слайд 1: подпись",
+      "label": "Блок 1: подпись",
       "type": "textarea",
-      "selector": "[data-edit=\"hero-1\"]",
-      "value": "Почему вообще существует UNIFORMS? Большой разговор с командой о рынке, продукте и производстве.",
-      "attr": "data-caption"
+      "selector": "[data-edit=\"hero-1-title\"]",
+      "value": "Почему вообще существует UNIFORMS? Большой разговор с командой о рынке, продукте и производстве."
     },
     {
       "section": "Первый экран",
-      "label": "Слайд 1: картинка",
+      "label": "Блок 1: ссылка",
+      "type": "text",
+      "selector": "[data-edit=\"hero-1-link\"]",
+      "value": "Большой разговор"
+    },
+    {
+      "section": "Первый экран",
+      "label": "Блок 1: картинка",
       "type": "image",
       "selector": "[data-edit=\"hero-1-img\"]",
       "value": "assets/named/interview-03-team-three.jpg",
@@ -441,23 +390,28 @@
     },
     {
       "section": "Первый экран",
-      "label": "Слайд 2: раздел",
+      "label": "Блок 2: раздел",
       "type": "text",
-      "selector": "[data-edit=\"hero-2\"]",
-      "value": "Обратная связь",
-      "attr": "data-eyebrow"
+      "selector": "[data-edit=\"hero-2-kicker\"]",
+      "value": "Обратная связь"
     },
     {
       "section": "Первый экран",
-      "label": "Слайд 2: подпись",
+      "label": "Блок 2: подпись",
       "type": "textarea",
-      "selector": "[data-edit=\"hero-2\"]",
-      "value": "Прийти можно с любым запросом — от сложной системы до базового тиража.",
-      "attr": "data-caption"
+      "selector": "[data-edit=\"hero-2-title\"]",
+      "value": "Прийти можно с любым запросом — от сложной системы до базового тиража."
     },
     {
       "section": "Первый экран",
-      "label": "Слайд 2: картинка",
+      "label": "Блок 2: ссылка",
+      "type": "text",
+      "selector": "[data-edit=\"hero-2-link\"]",
+      "value": "Собрать запрос"
+    },
+    {
+      "section": "Первый экран",
+      "label": "Блок 2: картинка",
       "type": "image",
       "selector": "[data-edit=\"hero-2-img\"]",
       "value": "assets/named/interview-01-sewing-action.jpg",
@@ -465,23 +419,28 @@
     },
     {
       "section": "Первый экран",
-      "label": "Слайд 3: раздел",
+      "label": "Блок 3: раздел",
       "type": "text",
-      "selector": "[data-edit=\"hero-3\"]",
-      "value": "Каталог",
-      "attr": "data-eyebrow"
+      "selector": "[data-edit=\"hero-3-kicker\"]",
+      "value": "Каталог"
     },
     {
       "section": "Первый экран",
-      "label": "Слайд 3: подпись",
+      "label": "Блок 3: подпись",
       "type": "textarea",
-      "selector": "[data-edit=\"hero-3\"]",
-      "value": "Базовые модели, отработанные большим количеством заказов и проверенные практикой.",
-      "attr": "data-caption"
+      "selector": "[data-edit=\"hero-3-title\"]",
+      "value": "Базовые модели, отработанные большим количеством заказов и проверенные практикой."
     },
     {
       "section": "Первый экран",
-      "label": "Слайд 3: картинка",
+      "label": "Блок 3: ссылка",
+      "type": "text",
+      "selector": "[data-edit=\"hero-3-link\"]",
+      "value": "Перейти к моделям"
+    },
+    {
+      "section": "Первый экран",
+      "label": "Блок 3: картинка",
       "type": "image",
       "selector": "[data-edit=\"hero-3-img\"]",
       "value": "assets/classic/0810 5п.jpg",
