@@ -364,28 +364,28 @@
       "label": "Блок 1: раздел",
       "type": "text",
       "selector": "[data-edit=\"hero-1-kicker\"]",
-      "value": "Интервью"
+      "value": "Обратная связь"
     },
     {
       "section": "Первый экран",
       "label": "Блок 1: подпись",
       "type": "textarea",
       "selector": "[data-edit=\"hero-1-title\"]",
-      "value": "Почему вообще существует UNIFORMS? Большой разговор с командой о рынке, продукте и производстве."
+      "value": "Прийти можно с любым запросом — от сложной системы до базового тиража."
     },
     {
       "section": "Первый экран",
       "label": "Блок 1: ссылка",
       "type": "text",
       "selector": "[data-edit=\"hero-1-link\"]",
-      "value": "Большой разговор"
+      "value": "Собрать запрос"
     },
     {
       "section": "Первый экран",
       "label": "Блок 1: картинка",
       "type": "image",
       "selector": "[data-edit=\"hero-1-img\"]",
-      "value": "assets/named/interview-03-team-three.jpg",
+      "value": "assets/named/interview-01-sewing-action.jpg",
       "attr": "src"
     },
     {
@@ -393,28 +393,28 @@
       "label": "Блок 2: раздел",
       "type": "text",
       "selector": "[data-edit=\"hero-2-kicker\"]",
-      "value": "Обратная связь"
+      "value": "Интервью"
     },
     {
       "section": "Первый экран",
       "label": "Блок 2: подпись",
       "type": "textarea",
       "selector": "[data-edit=\"hero-2-title\"]",
-      "value": "Прийти можно с любым запросом — от сложной системы до базового тиража."
+      "value": "Почему вообще существует UNIFORMS? Большой разговор с командой о рынке, продукте и производстве."
     },
     {
       "section": "Первый экран",
       "label": "Блок 2: ссылка",
       "type": "text",
       "selector": "[data-edit=\"hero-2-link\"]",
-      "value": "Собрать запрос"
+      "value": "Большой разговор"
     },
     {
       "section": "Первый экран",
       "label": "Блок 2: картинка",
       "type": "image",
       "selector": "[data-edit=\"hero-2-img\"]",
-      "value": "assets/named/interview-01-sewing-action.jpg",
+      "value": "assets/named/interview-03-team-three.jpg",
       "attr": "src"
     },
     {
