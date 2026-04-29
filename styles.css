@@ -2031,6 +2031,14 @@ address {
   object-position: center 14%;
 }
 
+body[data-content-page="home"] .home-hero-image-feedback {
+  object-position: center 30%;
+}
+
+body[data-content-page="home"] .home-hero-image-interview {
+  object-position: center 20%;
+}
+
 .home-hero-card:hover img {
   transform: scale(1.015);
 }

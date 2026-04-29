@@ -385,7 +385,7 @@
       "label": "Блок 1: картинка",
       "type": "image",
       "selector": "[data-edit=\"hero-1-img\"]",
-      "value": "assets/named/interview-01-sewing-action.jpg",
+      "value": "assets/home/1 (26).jpg",
       "attr": "src"
     },
     {
@@ -443,7 +443,7 @@
       "label": "Блок 3: картинка",
       "type": "image",
       "selector": "[data-edit=\"hero-3-img\"]",
-      "value": "assets/classic/0810 5п.jpg",
+      "value": "assets/home/20230613_153611-01.jpeg",
       "attr": "src"
     }
   ]
