@@ -123,7 +123,7 @@
       "label": "Мерч: картинка",
       "type": "image",
       "selector": "[data-edit=\"catalog-merch-img\"]",
-      "value": "assets/named/ges2-01-team-stairs.jpg",
+      "value": "assets/home/мерч.png",
       "attr": "src"
     },
     {
@@ -145,7 +145,7 @@
       "label": "Форма: картинка",
       "type": "image",
       "selector": "[data-edit=\"catalog-form-img\"]",
-      "value": "assets/home/form-flatlays.jpg",
+      "value": "assets/home/форма.png",
       "attr": "src"
     },
     {
