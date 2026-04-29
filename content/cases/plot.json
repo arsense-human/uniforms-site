@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "title": "Жилеты для креативного агентства",
+  "fields": [
+    {
+      "section": "Шапка статьи",
+      "label": "Рубрика",
+      "type": "text",
+      "selector": "[data-edit=\"article-category\"]",
+      "value": "PLOT№"
+    },
+    {
+      "section": "Шапка статьи",
+      "label": "Заголовок",
+      "type": "text",
+      "selector": "[data-edit=\"article-title\"]",
+      "value": "Жилеты для креативного агентства"
+    },
+    {
+      "section": "Шапка статьи",
+      "label": "Подзаголовок",
+      "type": "textarea",
+      "selector": "[data-edit=\"article-dek\"]",
+      "value": "Форма для команды события с аккуратным брендингом и чистой внутренней обработкой."
+    },
+    {
+      "section": "Шапка статьи",
+      "label": "Кредит",
+      "type": "textarea",
+      "selector": "[data-edit=\"article-credit\"]",
+      "value": "UNIFORMS"
+    },
+    {
+      "section": "PLOT№ / страница 23",
+      "label": "plot-img-1",
+      "type": "image",
+      "selector": "[data-edit=\"plot-img-1\"]",
+      "value": "../assets/named/plot-01-event-team.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "PLOT№ / страница 23",
+      "label": "Жилеты для креативного агентства PLOT№",
+      "type": "text",
+      "selector": "[data-edit=\"plot-title\"]",
+      "value": "Жилеты для креативного агентства PLOT№"
+    },
+    {
+      "section": "PLOT№ / страница 23",
+      "label": "Проект начался с запроса на форму для двухдн",
+      "type": "textarea",
+      "selector": "[data-edit=\"plot-p23-1\"]",
+      "value": "Проект начался с запроса на форму для двухдневного мероприятия — задача была не просто одеть команду, а собрать визуально цельное решение, которое будет работать в динамичной среде."
+    },
+    {
+      "section": "PLOT№ / страница 23",
+      "label": "В основе — жилеты в фирменном цвете креативн",
+      "type": "textarea",
+      "selector": "[data-edit=\"plot-p23-2\"]",
+      "value": "В основе — жилеты в фирменном цвете креативного агентства PLOT№, с лаконичным и аккуратным брендингом."
+    },
+    {
+      "section": "PLOT№ / страница 24",
+      "label": "plot-img-2",
+      "type": "image",
+      "selector": "[data-edit=\"plot-img-2\"]",
+      "value": "../assets/named/plot-04-event-duo.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "PLOT№ / страница 24",
+      "label": "plot-img-3",
+      "type": "image",
+      "selector": "[data-edit=\"plot-img-3\"]",
+      "value": "../assets/named/plot-02-event-crowd.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "PLOT№ / страница 24",
+      "label": "plot-img-4",
+      "type": "image",
+      "selector": "[data-edit=\"plot-img-4\"]",
+      "value": "../assets/named/plot-05-vest-detail.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "PLOT№ / страница 24",
+      "label": "plot-img-5",
+      "type": "image",
+      "selector": "[data-edit=\"plot-img-5\"]",
+      "value": "../assets/named/plot-03-creative-poster.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "PLOT№ / страница 24",
+      "label": "Отдельное внимание было уделено деталям. Лог",
+      "type": "textarea",
+      "selector": "[data-edit=\"plot-p24-1\"]",
+      "value": "Отдельное внимание было уделено деталям. Логотип не выносился наружу как отдельный элемент, а был интегрирован в изделие через вышивку матовыми нитками вместо привычной бирки. Для сборки использовались немецкие нитки Gütermann, подобранные точно в тон, с акцентом на плотные отделочные строчки и чистую внутреннюю обработку."
+    },
+    {
+      "section": "PLOT№ / страница 24",
+      "label": "В результате получилась партия, в которой вс",
+      "type": "textarea",
+      "selector": "[data-edit=\"plot-p24-2\"]",
+      "value": "В результате получилась партия, в которой все изделия выглядели как единое целое — без расхождений в цвете, строчке и посадке. Это тот случай, когда вещь начинает жить внутри события: команда активно носила жилеты, а нас в процессе буквально завалили фотографиями — как естественным продолжением того, как продукт воспринимается в реальной среде."
+    }
+  ]
+}

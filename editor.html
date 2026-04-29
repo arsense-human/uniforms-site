@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UNIFORMS — редактор</title>
+    <style>
+      :root { font-family: Arial, sans-serif; color: #111; background: #fafafa; }
+      body { margin: 0; }
+      header { position: sticky; top: 0; z-index: 2; display: flex; gap: 16px; align-items: center; padding: 14px 18px; border-bottom: 1px solid #ddd; background: #fafafa; }
+      h1 { margin: 0; font-size: 18px; font-weight: 500; }
+      main { display: grid; grid-template-columns: minmax(360px, 520px) 1fr; min-height: calc(100vh - 57px); }
+      .panel { padding: 18px; border-right: 1px solid #ddd; overflow: auto; max-height: calc(100vh - 57px); }
+      .preview { min-height: calc(100vh - 57px); }
+      iframe { width: 100%; height: calc(100vh - 57px); border: 0; background: white; }
+      label { display: grid; gap: 6px; margin: 0 0 14px; font-size: 12px; text-transform: uppercase; color: #555; }
+      input, textarea, select { width: 100%; box-sizing: border-box; border: 1px solid #aaa; border-radius: 0; padding: 10px; font: 14px Arial, sans-serif; color: #111; background: white; }
+      textarea { min-height: 96px; resize: vertical; }
+      button, .button { border: 1px solid #111; background: transparent; color: #111; padding: 10px 14px; font: 12px Arial, sans-serif; text-transform: uppercase; cursor: pointer; text-decoration: none; }
+      .actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 18px; }
+      .section-title { margin: 22px 0 10px; padding-top: 18px; border-top: 1px solid #ddd; font-size: 13px; text-transform: uppercase; }
+      .status { min-height: 18px; color: #555; font-size: 13px; }
+      .image-field { gap: 8px; }
+      .image-preview { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; border: 1px solid #ddd; background: white; }
+      .field-note { color: #777; font-size: 11px; line-height: 1.35; text-transform: none; }
+      .field-card { margin: 0 0 14px; }
+      .style-controls { margin: -4px 0 16px; border: 1px solid #ddd; background: #fff; }
+      .style-controls summary { padding: 9px 10px; cursor: pointer; color: #555; font-size: 11px; text-transform: uppercase; }
+      .control-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding: 0 10px 10px; }
+      .control-grid label { margin: 0; }
+      .control-grid .wide-control { grid-column: 1 / -1; }
+      @media (max-width: 900px) { main { grid-template-columns: 1fr; } .panel { max-height: none; border-right: 0; border-bottom: 1px solid #ddd; } iframe { height: 70vh; } }
+    </style>
+  </head>
+  <body>
+    <header><h1>Редактор UNIFORMS</h1><a class="button" href="index.html">Сайт</a></header>
+    <main>
+      <section class="panel">
+        <label>Страница<select id="pageSelect"><option value="content/home.json" data-preview="index.html">Главная</option>
+<option value="content/interview.json" data-preview="interview.html">Интервью</option>
+<option value="content/cases/alice.json" data-preview="cases/alice.html">Подарки для Алисы</option>
+<option value="content/cases/ges-2.json" data-preview="cases/ges-2.html">Медиаторы ГЭС-2</option>
+<option value="content/cases/yandex-search.json" data-preview="cases/yandex-search.html">Ветровки для поиска</option>
+<option value="content/cases/plot.json" data-preview="cases/plot.html">Жилеты PLOT№</option>
+<option value="content/cases/archivarius.json" data-preview="cases/archivarius.html">Archivarius</option>
+<option value="content/cases/siniy-vsadnik.json" data-preview="cases/siniy-vsadnik.html">Siniy Vsadnik</option>
+<option value="content/cases/kruzhok.json" data-preview="cases/kruzhok.html">Kruzhok</option>
+<option value="content/cases/oganesyan.json" data-preview="cases/oganesyan.html">Oganesyan</option>
+<option value="content/cases/ayris-silk.json" data-preview="cases/ayris-silk.html">Ayris Silk</option></select></label>
+        <div class="actions">
+          <button id="openFile" type="button">Открыть файл</button>
+          <button id="saveFile" type="button">Сохранить</button>
+          <button id="downloadFile" type="button">Скачать копию</button>
+        </div>
+        <p class="status" id="status"></p>
+        <div id="fields"></div>
+      </section>
+      <section class="preview"><iframe id="preview" title="Предпросмотр"></iframe></section>
+    </main>
+    <script>
+      const pageSelect = document.getElementById('pageSelect');
+      const fieldsEl = document.getElementById('fields');
+      const preview = document.getElementById('preview');
+      const statusEl = document.getElementById('status');
+      let current = null;
+      let fileHandle = null;
+      const setStatus = (text) => statusEl.textContent = text || '';
+      const hangingPrepositions = ['перед', 'через', 'между', 'после', 'около', 'ради', 'вдоль', 'вокруг', 'кроме', 'среди', 'против', 'вместо', 'внутри', 'мимо', 'для', 'без', 'над', 'под', 'при', 'про', 'обо', 'изо', 'ото', 'во', 'на', 'ко', 'со', 'об', 'от', 'до', 'по', 'за', 'из', 'о', 'у', 'к', 'с', 'в', 'а', 'и', 'но', 'или', 'что', 'как', 'не', 'ни', 'же', 'ли', 'бы'];
+      const hangingPrepositionPattern = new RegExp(`(^|[\\s([{«"„])(${hangingPrepositions.join('|')})([ \\t]+)`, 'giu');
+      function protectHangingPrepositions(text = '') {
+        return text.replace(hangingPrepositionPattern, '$1$2\u00a0');
+      }
+      function selectedPreview() { return pageSelect.selectedOptions[0]?.dataset.preview || 'index.html'; }
+      async function loadContent(path) {
+        fileHandle = null;
+        preview.src = selectedPreview();
+        try {
+          const response = await fetch(path + '?v=' + Date.now());
+          current = await response.json();
+          renderFields();
+          setStatus('Загружено: ' + path);
+        } catch (error) {
+          current = { version: 1, title: 'Новая страница', fields: [] };
+          fieldsEl.innerHTML = '';
+          setStatus('Не получилось загрузить JSON. Можно открыть файл вручную.');
+        }
+      }
+      function applyField(field) {
+        const doc = preview.contentDocument;
+        if (!doc) return;
+        doc.querySelectorAll(field.selector).forEach((node) => {
+          if (field.attr) node.setAttribute(field.attr, field.value || '');
+          else node.textContent = protectHangingPrepositions(field.value || '');
+          applyFieldStyle(node, field.style);
+          applyCaptionBoxStyle(node, field.captionBoxStyle || field.captionStyle);
+        });
+        preview.contentWindow?.requestAnimationFrame?.(() => {
+          preview.contentWindow?.syncCaptionStacksToImages?.();
+        });
+      }
+      function applyFieldStyle(node, style = {}) {
+        node.style.alignSelf = style?.alignSelf || '';
+        node.style.color = style?.color || '';
+        node.style.fontFamily = style?.fontFamily || '';
+        node.style.fontSize = style?.fontSize || '';
+        node.style.fontStyle = style?.fontStyle || '';
+        node.style.fontWeight = style?.fontWeight || '';
+        node.style.justifySelf = style?.justifySelf || '';
+        node.style.lineHeight = style?.lineHeight || '';
+        node.style.marginBottom = style?.marginBottom || '';
+        node.style.marginTop = style?.marginTop || '';
+        node.style.maxHeight = style?.maxHeight || '';
+        node.style.maxWidth = style?.maxWidth || '';
+        node.style.objectFit = style?.objectFit || '';
+        node.style.textAlign = style?.textAlign || '';
+        node.style.textTransform = style?.textTransform || '';
+        node.style.width = style?.width || '';
+      }
+      function applyCaptionBoxStyle(node, style = {}) {
+        const box = node.closest('.look-caption-stack');
+        if (!box || !style || !Object.keys(style).length) return;
+        box.style.bottom = style?.bottom || '';
+        box.style.justifyItems = style?.justifyItems || '';
+        box.style.left = style?.left || '';
+        box.style.maxWidth = style?.maxWidth || '';
+        box.style.right = style?.right || '';
+        box.style.top = style?.top || '';
+      }
+      function syncStyle(field, key, value, unit = '') {
+        field.style = field.style || {};
+        const normalized = value ? value + unit : '';
+        if (normalized) field.style[key] = normalized;
+        else delete field.style[key];
+        if (!Object.keys(field.style).length) delete field.style;
+        applyField(field);
+      }
+      function syncCaptionStyle(field, key, value, unit = '') {
+        field.captionBoxStyle = field.captionBoxStyle || {};
+        const normalized = value ? value + unit : '';
+        if (normalized) field.captionBoxStyle[key] = normalized;
+        else delete field.captionBoxStyle[key];
+        if (!Object.keys(field.captionBoxStyle).length) delete field.captionBoxStyle;
+        applyField(field);
+      }
+      function editorImageSrc(value) {
+        return (value || '').replace(/^\.\.\//, '');
+      }
+      function styleNumber(value) {
+        return String(value || '').replace(/[^\d.]/g, '');
+      }
+      function canEditStyle(field) {
+        return pageSelect.value === 'content/interview.json';
+      }
+      function isLookCaption(field) {
+        return pageSelect.value === 'content/interview.json' && /int-look/.test(field.selector || '');
+      }
+      function appendSelect(parent, labelText, value, options, onChange, wide = false) {
+        const label = document.createElement('label');
+        if (wide) label.className = 'wide-control';
+        label.textContent = labelText;
+        const select = document.createElement('select');
+        options.forEach(([optionValue, text]) => {
+          const option = document.createElement('option');
+          option.value = optionValue;
+          option.textContent = text;
+          select.appendChild(option);
+        });
+        select.value = value || '';
+        select.addEventListener('change', () => onChange(select.value));
+        label.appendChild(select);
+        parent.appendChild(label);
+      }
+      function appendInput(parent, labelText, value, onInput, attrs = {}) {
+        const label = document.createElement('label');
+        if (attrs.wide) label.className = 'wide-control';
+        label.textContent = labelText;
+        const input = document.createElement('input');
+        input.type = attrs.type || 'text';
+        Object.entries(attrs).forEach(([key, attrValue]) => {
+          if (key !== 'wide' && key !== 'type') input.setAttribute(key, attrValue);
+        });
+        input.value = value || '';
+        input.addEventListener('input', () => onInput(input.value));
+        label.appendChild(input);
+        parent.appendChild(label);
+      }
+      function renderStyleControls(field) {
+        const details = document.createElement('details');
+        details.className = 'style-controls';
+        if (field.style && Object.keys(field.style).length) details.open = true;
+
+        const summary = document.createElement('summary');
+        summary.textContent = field.type === 'image' ? 'Положение и изображение' : 'Шрифт, кегль и положение';
+        details.appendChild(summary);
+
+        const grid = document.createElement('div');
+        grid.className = 'control-grid';
+
+        if (field.type !== 'image' && !field.attr) {
+          appendSelect(grid, 'Шрифт', field.style?.fontFamily, [
+            ['', 'По умолчанию'],
+            ['var(--font-sans)', 'Montserrat'],
+            ['var(--font-serif)', 'Libertinus Serif'],
+          ], (value) => syncStyle(field, 'fontFamily', value));
+          appendInput(grid, 'Кегль, px', styleNumber(field.style?.fontSize), (value) => syncStyle(field, 'fontSize', value, 'px'), { type: 'number', min: '8', max: '160', step: '1' });
+          appendInput(grid, 'Интерлиньяж', field.style?.lineHeight || '', (value) => syncStyle(field, 'lineHeight', value), { type: 'number', min: '0.8', max: '2.4', step: '0.05' });
+          appendSelect(grid, 'Вес', field.style?.fontWeight, [
+            ['', 'По умолчанию'],
+            ['300', 'Light'],
+            ['400', 'Regular'],
+            ['500', 'Medium'],
+            ['600', 'Semi Bold'],
+            ['700', 'Bold'],
+          ], (value) => syncStyle(field, 'fontWeight', value));
+          appendSelect(grid, 'Регистр', field.style?.textTransform, [
+            ['', 'По умолчанию'],
+            ['none', 'Как в тексте'],
+            ['uppercase', 'Капсом'],
+            ['lowercase', 'Строчные'],
+          ], (value) => syncStyle(field, 'textTransform', value));
+          appendSelect(grid, 'Выравнивание', field.style?.textAlign, [
+            ['', 'По умолчанию'],
+            ['left', 'Слева'],
+            ['center', 'По центру'],
+            ['right', 'Справа'],
+          ], (value) => syncStyle(field, 'textAlign', value));
+          appendInput(grid, 'Цвет', field.style?.color || '', (value) => syncStyle(field, 'color', value), { placeholder: '#111111 или white' });
+          appendInput(grid, 'Макс. ширина', field.style?.maxWidth || '', (value) => syncStyle(field, 'maxWidth', value), { placeholder: '620px, 80%, none' });
+        }
+
+        appendInput(grid, 'Отступ сверху', styleNumber(field.style?.marginTop), (value) => syncStyle(field, 'marginTop', value, 'px'), { type: 'number', min: '-80', max: '200', step: '1' });
+        appendInput(grid, 'Отступ снизу', styleNumber(field.style?.marginBottom), (value) => syncStyle(field, 'marginBottom', value, 'px'), { type: 'number', min: '-80', max: '200', step: '1' });
+        appendSelect(grid, 'Позиция', field.style?.justifySelf, [
+          ['', 'По умолчанию'],
+          ['start', 'Слева'],
+          ['center', 'По центру'],
+          ['end', 'Справа'],
+          ['stretch', 'На всю ширину'],
+        ], (value) => syncStyle(field, 'justifySelf', value));
+
+        if (field.type === 'image') {
+          appendInput(grid, 'Ширина', field.style?.width || '', (value) => syncStyle(field, 'width', value), { placeholder: '100%, 80%, 640px' });
+          appendInput(grid, 'Макс. высота', field.style?.maxHeight || '', (value) => syncStyle(field, 'maxHeight', value), { placeholder: '82vh, 720px' });
+          appendSelect(grid, 'Показ фото', field.style?.objectFit, [
+            ['', 'По умолчанию'],
+            ['contain', 'Целиком'],
+            ['scale-down', 'Целиком, меньше'],
+          ], (value) => syncStyle(field, 'objectFit', value));
+        }
+
+        details.appendChild(grid);
+        return details;
+      }
+      function renderCaptionControls(field) {
+        const details = document.createElement('details');
+        details.className = 'style-controls';
+        const captionStyle = field.captionBoxStyle || field.captionStyle || {};
+        if (Object.keys(captionStyle).length) details.open = true;
+
+        const summary = document.createElement('summary');
+        summary.textContent = 'Положение подписи на фото';
+        details.appendChild(summary);
+
+        const grid = document.createElement('div');
+        grid.className = 'control-grid';
+        appendInput(grid, 'Слева, px', styleNumber(captionStyle.left), (value) => syncCaptionStyle(field, 'left', value, 'px'), { type: 'number', min: '0', max: '240', step: '1' });
+        appendInput(grid, 'Справа, px', styleNumber(captionStyle.right), (value) => syncCaptionStyle(field, 'right', value, 'px'), { type: 'number', min: '0', max: '240', step: '1' });
+        appendInput(grid, 'Снизу, px', styleNumber(captionStyle.bottom), (value) => syncCaptionStyle(field, 'bottom', value, 'px'), { type: 'number', min: '0', max: '240', step: '1' });
+        appendInput(grid, 'Сверху, px', styleNumber(captionStyle.top), (value) => syncCaptionStyle(field, 'top', value, 'px'), { type: 'number', min: '0', max: '240', step: '1' });
+        appendInput(grid, 'Макс. ширина', captionStyle.maxWidth || '', (value) => syncCaptionStyle(field, 'maxWidth', value), { placeholder: '320px, 80%' });
+        appendSelect(grid, 'Привязка', captionStyle.justifyItems, [
+          ['', 'По умолчанию'],
+          ['start', 'Слева'],
+          ['center', 'По центру'],
+          ['end', 'Справа'],
+        ], (value) => syncCaptionStyle(field, 'justifyItems', value));
+        details.appendChild(grid);
+        return details;
+      }
+      function renderFields() {
+        fieldsEl.innerHTML = '';
+        let last = '';
+        (current.fields || []).forEach((field, index) => {
+          if (field.section !== last) {
+            last = field.section;
+            const h = document.createElement('div');
+            h.className = 'section-title';
+            h.textContent = last;
+            fieldsEl.appendChild(h);
+          }
+          const label = document.createElement('label');
+          label.className = 'field-card';
+          label.textContent = field.label;
+          if (field.type === 'image') label.classList.add('image-field');
+          const input = field.type === 'textarea' ? document.createElement('textarea') : document.createElement('input');
+          if (field.type === 'image') input.placeholder = 'assets/... или ../assets/...';
+          input.value = field.value || '';
+          let previewImg = null;
+          if (field.type === 'image') {
+            previewImg = document.createElement('img');
+            previewImg.className = 'image-preview';
+            previewImg.alt = '';
+            previewImg.src = editorImageSrc(input.value);
+          }
+          input.addEventListener('input', () => {
+            current.fields[index].value = input.value;
+            if (previewImg) previewImg.src = editorImageSrc(input.value);
+            applyField(current.fields[index]);
+          });
+          label.appendChild(input);
+          if (field.type === 'image') {
+            label.appendChild(previewImg);
+            const note = document.createElement('span');
+            note.className = 'field-note';
+            note.textContent = 'Путь к изображению из папок проекта. Для страниц кейсов обычно начинается с ../assets/.';
+            label.appendChild(note);
+          }
+          fieldsEl.appendChild(label);
+          if (canEditStyle(field)) fieldsEl.appendChild(renderStyleControls(field));
+          if (isLookCaption(field)) fieldsEl.appendChild(renderCaptionControls(field));
+        });
+      }
+      preview.addEventListener('load', () => { (current?.fields || []).forEach(applyField); });
+      pageSelect.addEventListener('change', () => loadContent(pageSelect.value));
+      document.getElementById('openFile').addEventListener('click', async () => {
+        if (!window.showOpenFilePicker) { setStatus('В этом браузере нужно редактировать через скачивание копии.'); return; }
+        const [handle] = await showOpenFilePicker({ types: [{ description: 'JSON', accept: { 'application/json': ['.json'] } }] });
+        fileHandle = handle;
+        const file = await handle.getFile();
+        current = JSON.parse(await file.text());
+        renderFields();
+        preview.src = selectedPreview();
+        setStatus('Файл открыт. После правок нажми «Сохранить».');
+      });
+      document.getElementById('saveFile').addEventListener('click', async () => {
+        if (!current) return;
+        if (!fileHandle) { setStatus('Сначала нажми «Открыть файл» и выбери JSON этой страницы.'); return; }
+        const writable = await fileHandle.createWritable();
+        await writable.write(JSON.stringify(current, null, 2));
+        await writable.close();
+        preview.contentWindow?.location.reload();
+        setStatus('Сохранено. Предпросмотр обновлен.');
+      });
+      document.getElementById('downloadFile').addEventListener('click', () => {
+        if (!current) return;
+        const blob = new Blob([JSON.stringify(current, null, 2)], { type: 'application/json' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = pageSelect.value.split('/').pop();
+        a.click();
+        URL.revokeObjectURL(a.href);
+      });
+      loadContent(pageSelect.value);
+    </script>
+  </body>
+</html>

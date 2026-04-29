@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UNIFORMS — Позиция каталога</title>
+    <link rel="stylesheet" href="styles.css?v=product-pricing-20260429">
+  </head>
+  <body data-product-page>
+    <header class="site-header" data-header>
+      <a class="brand" href="index.html#top" aria-label="UNIFORMS">
+        <img src="assets/brand/uniforms-logo-full.png" alt="UNIFORMS">
+      </a>
+      <nav class="main-nav" aria-label="Основная навигация">
+        <a href="catalog.html">Каталог</a>
+        <a href="index.html#cases">Кейсы</a>
+        <a href="interview.html">Интервью</a>
+        <a href="index.html#contacts">Контакты</a>
+      </nav>
+      <button class="menu-button" type="button" data-menu-toggle aria-label="Открыть меню">Меню</button>
+    </header>
+    <main class="product-page">
+      <p class="product-page-status" data-product-page-status>Загрузка позиции каталога</p>
+      <article class="product-page-layout" data-product-page-layout hidden>
+        <section class="product-page-gallery" aria-label="Изображения модели">
+          <div class="product-page-media-list" data-product-page-images></div>
+        </section>
+        <aside class="product-page-info">
+          <a class="product-page-back" href="catalog.html">Назад в каталог</a>
+          <p class="kicker" data-product-kicker>Производим под заказ</p>
+          <h1 data-dialog-title></h1>
+          <p class="product-detail-description" data-dialog-detail></p>
+          <dl class="product-detail-specs" data-product-specs></dl>
+          <dl class="product-detail-production" data-product-production></dl>
+          <section class="product-pricing" data-product-pricing-section hidden>
+            <button class="product-pricing-toggle" type="button" data-product-pricing-toggle>Материалы и цена</button>
+            <div class="product-pricing-body" data-product-pricing-body hidden>
+              <table class="product-pricing-table">
+                <thead>
+                  <tr><th>Материал</th><th>Тираж</th><th>Цена</th></tr>
+                </thead>
+                <tbody data-product-pricing></tbody>
+              </table>
+              <p data-product-price-note></p>
+            </div>
+          </section>
+          <button class="product-measure-button" type="button" data-measurements-open>Замеры изделия</button>
+          <button class="product-request-button" type="button" data-product-request>Собрать запрос</button>
+        </aside>
+      </article>
+    </main>
+    <dialog class="product-page-dialog" data-measurements-dialog>
+      <button class="dialog-close" type="button" data-measurements-close aria-label="Закрыть">Закрыть</button>
+      <p class="kicker">Замеры изделия</p>
+      <h2>Таблица размеров</h2>
+      <table class="measurements-table">
+        <thead>
+          <tr><th>Размер</th><th>Грудь</th><th>Длина</th><th>Рукав</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>S</td><td>56</td><td>68</td><td>61</td></tr>
+          <tr><td>M</td><td>58</td><td>70</td><td>62</td></tr>
+          <tr><td>L</td><td>60</td><td>72</td><td>63</td></tr>
+          <tr><td>XL</td><td>62</td><td>74</td><td>64</td></tr>
+        </tbody>
+      </table>
+    </dialog>
+    <dialog class="product-page-dialog" data-product-form-dialog>
+      <button class="dialog-close" type="button" data-product-form-close aria-label="Закрыть">Закрыть</button>
+      <form class="b2b-contact-form product-page-form" action="mailto:merch@uniforms.ru" method="post" enctype="text/plain" data-contact-form data-product-form>
+        <p class="kicker">Обратная связь</p>
+        <h3>Собрать запрос</h3>
+        <input name="Модель" type="hidden" data-product-form-model>
+        <label>Имя<input name="Имя" type="text" autocomplete="name"></label>
+        <label>Контакт<input name="Контакт" type="text" autocomplete="email"></label>
+        <label>Комментарий<textarea name="Комментарий" rows="5"></textarea></label>
+        <button class="text-submit" type="submit">Получить расчёт</button>
+        <p class="form-success" data-form-success hidden>Мы свяжемся с вами в течение 1 рабочего дня.</p>
+      </form>
+    </dialog>
+    <script src="app.js?v=product-pricing-20260429"></script>
+  </body>
+</html>

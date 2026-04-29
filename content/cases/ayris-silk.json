@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "title": "Ayris Silk",
+  "fields": [
+    {
+      "section": "Шапка статьи",
+      "label": "Рубрика",
+      "type": "text",
+      "selector": "[data-edit=\"article-category\"]",
+      "value": "Шелковые аксессуары"
+    },
+    {
+      "section": "Шапка статьи",
+      "label": "Заголовок",
+      "type": "text",
+      "selector": "[data-edit=\"article-title\"]",
+      "value": "Ayris Silk"
+    },
+    {
+      "section": "Шапка статьи",
+      "label": "Подзаголовок",
+      "type": "textarea",
+      "selector": "[data-edit=\"article-dek\"]",
+      "value": "Полный цикл от концепции до стабильного производства натурального шелка."
+    },
+    {
+      "section": "Шапка статьи",
+      "label": "Кредит",
+      "type": "textarea",
+      "selector": "[data-edit=\"article-credit\"]",
+      "value": "UNIFORMS"
+    },
+    {
+      "section": "Ayris Silk / страница 36",
+      "label": "ayris-img-1",
+      "type": "image",
+      "selector": "[data-edit=\"ayris-img-1\"]",
+      "value": "../assets/named/ayris-silk-09-boxes.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Ayris Silk / страница 36",
+      "label": "Ayris Silk",
+      "type": "text",
+      "selector": "[data-edit=\"ayris-title\"]",
+      "value": "Ayris Silk"
+    },
+    {
+      "section": "Ayris Silk / страница 36",
+      "label": "Это проект, где ключевым фактором становится",
+      "type": "textarea",
+      "selector": "[data-edit=\"ayris-p36-1\"]",
+      "value": "Это проект, где ключевым фактором становится материал. Работа с натуральным шелком требует другой точности: любые дефекты сразу заметны, а требования к качеству выше, чем в большинстве категорий."
+    },
+    {
+      "section": "Ayris Silk / страница 36",
+      "label": "Мы полностью разработали и запустили в произ",
+      "type": "textarea",
+      "selector": "[data-edit=\"ayris-p36-2\"]",
+      "value": "Мы полностью разработали и запустили в производство линейку шелковых аксессуаров, после чего стабильно давали ежемесячный выпуск на протяжении двух лет до перехода бренда на иностранное производство."
+    },
+    {
+      "section": "Ayris Silk / страница 37",
+      "label": "ayris-img-2",
+      "type": "image",
+      "selector": "[data-edit=\"ayris-img-2\"]",
+      "value": "../assets/named/ayris-silk-08-stacks.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Ayris Silk / страница 37",
+      "label": "ayris-img-3",
+      "type": "image",
+      "selector": "[data-edit=\"ayris-img-3\"]",
+      "value": "../assets/named/ayris-silk-03-black-turban.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Ayris Silk / страница 37",
+      "label": "ayris-img-4",
+      "type": "image",
+      "selector": "[data-edit=\"ayris-img-4\"]",
+      "value": "../assets/named/ayris-silk-05-black-sleep-mask.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Ayris Silk / страница 37",
+      "label": "Линейка включала аксессуары — от масок для с",
+      "type": "textarea",
+      "selector": "[data-edit=\"ayris-p37\"]",
+      "value": "Линейка включала аксессуары — от масок для сна до полотенец-тюрбанов, и каждый из них проходил строгий контроль. Важно было не просто обеспечить внешний вид, а гарантировать, что изделие дойдет до клиента без потери качества — без зацепок, деформаций и дефектов."
+    },
+    {
+      "section": "Ayris Silk / страница 38",
+      "label": "ayris-img-5",
+      "type": "image",
+      "selector": "[data-edit=\"ayris-img-5\"]",
+      "value": "../assets/named/ayris-silk-04-white-bow.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Ayris Silk / страница 38",
+      "label": "ayris-img-6",
+      "type": "image",
+      "selector": "[data-edit=\"ayris-img-6\"]",
+      "value": "../assets/named/ayris-silk-02-peach-bow.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Ayris Silk / страница 38",
+      "label": "ayris-img-7",
+      "type": "image",
+      "selector": "[data-edit=\"ayris-img-7\"]",
+      "value": "../assets/named/ayris-silk-06-beige-turban.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Ayris Silk / страница 38",
+      "label": "ayris-img-8",
+      "type": "image",
+      "selector": "[data-edit=\"ayris-img-8\"]",
+      "value": "../assets/named/ayris-silk-01-lifestyle-mask.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Ayris Silk / страница 38",
+      "label": "ayris-img-9",
+      "type": "image",
+      "selector": "[data-edit=\"ayris-img-9\"]",
+      "value": "../assets/named/ayris-silk-07-pink-bows-production.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Ayris Silk / страница 38",
+      "label": "Проект строился как полный цикл: от концепци",
+      "type": "textarea",
+      "selector": "[data-edit=\"ayris-p38\"]",
+      "value": "Проект строился как полный цикл: от концепции до стабильного производства. Это пример работы, где внимание к деталям определяет результат, а качество — не декларация, а обязательное условие на каждом этапе."
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "version": 1,
+  "title": "Siniy Vsadnik",
+  "fields": [
+    {
+      "section": "Шапка статьи",
+      "label": "Рубрика",
+      "type": "text",
+      "selector": "[data-edit=\"article-category\"]",
+      "value": "Дизайнерский бренд"
+    },
+    {
+      "section": "Шапка статьи",
+      "label": "Заголовок",
+      "type": "text",
+      "selector": "[data-edit=\"article-title\"]",
+      "value": "Siniy Vsadnik"
+    },
+    {
+      "section": "Шапка статьи",
+      "label": "Подзаголовок",
+      "type": "textarea",
+      "selector": "[data-edit=\"article-dek\"]",
+      "value": "Серия взаимосвязанных задач внутри одного производственного подхода."
+    },
+    {
+      "section": "Шапка статьи",
+      "label": "Кредит",
+      "type": "textarea",
+      "selector": "[data-edit=\"article-credit\"]",
+      "value": "UNIFORMS"
+    },
+    {
+      "section": "Siniy Vsadnik / страница 29",
+      "label": "siniy-img-1",
+      "type": "image",
+      "selector": "[data-edit=\"siniy-img-1\"]",
+      "value": "../assets/named/siniy-vsadnik-01-cover-pics.png",
+      "attr": "src"
+    },
+    {
+      "section": "Siniy Vsadnik / страница 29",
+      "label": "SINIY VSADNIK",
+      "type": "text",
+      "selector": "[data-edit=\"siniy-title\"]",
+      "value": "SINIY VSADNIK"
+    },
+    {
+      "section": "Siniy Vsadnik / страница 29",
+      "label": "Работа с брендом Siniy Vsadnik строилась не ",
+      "type": "textarea",
+      "selector": "[data-edit=\"siniy-p29-1\"]",
+      "value": "Работа с брендом Siniy Vsadnik строилась не как отдельный заказ, а как серия взаимосвязанных задач. За время сотрудничества было выпущено несколько коллекций — от Deserted Label до MOTTO — каждая со своей логикой, но внутри одного подхода. Здесь важно было не просто воспроизвести дизайн, а встроиться в процесс формирования вещей и предложить решения на уровне технологии и исполнения."
+    },
+    {
+      "section": "Siniy Vsadnik / страница 29",
+      "label": "Основной акцент был на деталях и конструктив",
+      "type": "textarea",
+      "selector": "[data-edit=\"siniy-p29-2\"]",
+      "value": "Основной акцент был на деталях и конструктиве. В рамках проекта разрабатывались нестандартные элементы, прорабатывались внутренние обработки, подбирались материалы, которые могли сохранить форму и характер изделия на тиражах. При этом каждая коллекция оставалась узнаваемой и цельной, несмотря на различие задач и сезонов."
+    },
+    {
+      "section": "Siniy Vsadnik / страница 30",
+      "label": "siniy-img-2",
+      "type": "image",
+      "selector": "[data-edit=\"siniy-img-2\"]",
+      "value": "../assets/named/siniy-vsadnik-02-orange-jacket-flat.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Siniy Vsadnik / страница 30",
+      "label": "siniy-img-3",
+      "type": "image",
+      "selector": "[data-edit=\"siniy-img-3\"]",
+      "value": "../assets/named/siniy-vsadnik-03-polka-dot-shirt.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Siniy Vsadnik / страница 30",
+      "label": "siniy-img-4",
+      "type": "image",
+      "selector": "[data-edit=\"siniy-img-4\"]",
+      "value": "../assets/named/siniy-vsadnik-04-purple-checkered-shirt.png",
+      "attr": "src"
+    },
+    {
+      "section": "Siniy Vsadnik / страница 30",
+      "label": "siniy-img-5",
+      "type": "image",
+      "selector": "[data-edit=\"siniy-img-5\"]",
+      "value": "../assets/named/siniy-vsadnik-05-grey-blue-hood-look.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Siniy Vsadnik / страница 31",
+      "label": "siniy-img-6",
+      "type": "image",
+      "selector": "[data-edit=\"siniy-img-6\"]",
+      "value": "../assets/named/siniy-vsadnik-06-blue-check-pants.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Siniy Vsadnik / страница 31",
+      "label": "siniy-img-7",
+      "type": "image",
+      "selector": "[data-edit=\"siniy-img-7\"]",
+      "value": "../assets/named/siniy-vsadnik-07-blue-pants-flat.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Siniy Vsadnik / страница 31",
+      "label": "siniy-img-8",
+      "type": "image",
+      "selector": "[data-edit=\"siniy-img-8\"]",
+      "value": "../assets/named/siniy-vsadnik-08-orange-pants-flat.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Siniy Vsadnik / страница 31",
+      "label": "siniy-img-9",
+      "type": "image",
+      "selector": "[data-edit=\"siniy-img-9\"]",
+      "value": "../assets/named/siniy-vsadnik-09-pink-camo-pants.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Siniy Vsadnik / страница 31",
+      "label": "siniy-img-10",
+      "type": "image",
+      "selector": "[data-edit=\"siniy-img-10\"]",
+      "value": "../assets/named/siniy-vsadnik-10-orange-jacket-portrait.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Siniy Vsadnik / страница 31",
+      "label": "siniy-img-11",
+      "type": "image",
+      "selector": "[data-edit=\"siniy-img-11\"]",
+      "value": "../assets/named/siniy-vsadnik-11-group-dark.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Siniy Vsadnik / страница 31",
+      "label": "В результате получилась не серия разрозненны",
+      "type": "textarea",
+      "selector": "[data-edit=\"siniy-p31\"]",
+      "value": "В результате получилась не серия разрозненных выпусков, а последовательная работа, где каждое новое решение усиливает предыдущие. Такой формат требует не только производства, но и постоянного диалога — когда вещи не просто шьются, а уточняются в процессе."
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "version": 1,
+  "title": "Oganesyan",
+  "fields": [
+    {
+      "section": "Шапка статьи",
+      "label": "Рубрика",
+      "type": "text",
+      "selector": "[data-edit=\"article-category\"]",
+      "value": "Сложные обработки"
+    },
+    {
+      "section": "Шапка статьи",
+      "label": "Заголовок",
+      "type": "text",
+      "selector": "[data-edit=\"article-title\"]",
+      "value": "Oganesyan"
+    },
+    {
+      "section": "Шапка статьи",
+      "label": "Подзаголовок",
+      "type": "textarea",
+      "selector": "[data-edit=\"article-dek\"]",
+      "value": "Внутренняя сборка, чистые швы и точность соединений."
+    },
+    {
+      "section": "Шапка статьи",
+      "label": "Кредит",
+      "type": "textarea",
+      "selector": "[data-edit=\"article-credit\"]",
+      "value": "UNIFORMS"
+    },
+    {
+      "section": "Oganesyan / страница 34",
+      "label": "ogan-img-1",
+      "type": "image",
+      "selector": "[data-edit=\"ogan-img-1\"]",
+      "value": "../assets/named/oganesyan-01-grey-top-look.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Oganesyan / страница 34",
+      "label": "ogan-img-2",
+      "type": "image",
+      "selector": "[data-edit=\"ogan-img-2\"]",
+      "value": "../assets/named/oganesyan-02-dark-roomy-look.png",
+      "attr": "src"
+    },
+    {
+      "section": "Oganesyan / страница 34",
+      "label": "OGANESYAN",
+      "type": "text",
+      "selector": "[data-edit=\"ogan-title\"]",
+      "value": "OGANESYAN"
+    },
+    {
+      "section": "Oganesyan / страница 34",
+      "label": "Этот проект строится вокруг сложных и нестан",
+      "type": "textarea",
+      "selector": "[data-edit=\"ogan-p34-1\"]",
+      "value": "Этот проект строится вокруг сложных и нестандартных обработок, которые определяют характер изделия не меньше, чем сама форма."
+    },
+    {
+      "section": "Oganesyan / страница 34",
+      "label": "Здесь ключевое внимание уделяется внутренней",
+      "type": "textarea",
+      "selector": "[data-edit=\"ogan-p34-2\"]",
+      "value": "Здесь ключевое внимание уделяется внутренней сборке: чистым швам, точности соединений, работе с плотными и чувствительными материалами, а также решениям, которые требуют отдельной технологической проработки и не допускают упрощений на этапе производства."
+    },
+    {
+      "section": "Oganesyan / страница 35",
+      "label": "ogan-img-3",
+      "type": "image",
+      "selector": "[data-edit=\"ogan-img-3\"]",
+      "value": "../assets/named/oganesyan-03-black-minimal-look.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Oganesyan / страница 35",
+      "label": "ogan-img-4",
+      "type": "image",
+      "selector": "[data-edit=\"ogan-img-4\"]",
+      "value": "../assets/named/oganesyan-04-light-look.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Oganesyan / страница 35",
+      "label": "ogan-img-5",
+      "type": "image",
+      "selector": "[data-edit=\"ogan-img-5\"]",
+      "value": "../assets/named/oganesyan-05-purple-shirt-look.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Oganesyan / страница 35",
+      "label": "ogan-img-6",
+      "type": "image",
+      "selector": "[data-edit=\"ogan-img-6\"]",
+      "value": "../assets/named/oganesyan-06-dark-look.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Oganesyan / страница 35",
+      "label": "ogan-img-7",
+      "type": "image",
+      "selector": "[data-edit=\"ogan-img-7\"]",
+      "value": "../assets/named/oganesyan-07-black-blazer-look.png",
+      "attr": "src"
+    },
+    {
+      "section": "Oganesyan / страница 35",
+      "label": "ogan-img-8",
+      "type": "image",
+      "selector": "[data-edit=\"ogan-img-8\"]",
+      "value": "../assets/named/oganesyan-08-red-blue-shirts-rail.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Oganesyan / страница 35",
+      "label": "ogan-img-9",
+      "type": "image",
+      "selector": "[data-edit=\"ogan-img-9\"]",
+      "value": "../assets/named/oganesyan-09-grey-shirts-rail.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Oganesyan / страница 35",
+      "label": "Каждое изделие проходит через последовательн",
+      "type": "textarea",
+      "selector": "[data-edit=\"ogan-p35\"]",
+      "value": "Каждое изделие проходит через последовательную настройку — от образца к тиражу — чтобы сохранить точность исполнения и качество обработки на каждом уровне."
+    }
+  ]
+}

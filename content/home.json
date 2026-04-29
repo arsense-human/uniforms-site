@@ -1,0 +1,491 @@
+{
+  "version": 1,
+  "title": "Главная страница",
+  "fields": [
+    {
+      "section": "Главная / Подарки для Алисы",
+      "label": "Картинка",
+      "type": "image",
+      "selector": "[data-edit=\"home-alice-img\"]",
+      "value": "assets/named/alice-02-gifts-set.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Главная / Подарки для Алисы",
+      "label": "Рубрика",
+      "type": "text",
+      "selector": "[data-edit=\"home-alice-kicker\"]",
+      "value": "Yandex Alice"
+    },
+    {
+      "section": "Главная / Подарки для Алисы",
+      "label": "Заголовок",
+      "type": "text",
+      "selector": "[data-edit=\"home-alice-title\"]",
+      "value": "Подарки для Алисы"
+    },
+    {
+      "section": "Главная / Подарки для Алисы",
+      "label": "Описание",
+      "type": "textarea",
+      "selector": "[data-edit=\"home-alice-desc\"]",
+      "value": "Утепленные анораки из шерпы и плотные футболки, собранные в 700 комплектов к новогодним праздникам."
+    },
+    {
+      "section": "Главная / Медиаторы ГЭС-2",
+      "label": "Картинка",
+      "type": "image",
+      "selector": "[data-edit=\"home-ges2-img\"]",
+      "value": "assets/named/ges2-01-team-stairs.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Главная / Медиаторы ГЭС-2",
+      "label": "Рубрика",
+      "type": "text",
+      "selector": "[data-edit=\"home-ges2-kicker\"]",
+      "value": "VAC foundation"
+    },
+    {
+      "section": "Главная / Медиаторы ГЭС-2",
+      "label": "Заголовок",
+      "type": "text",
+      "selector": "[data-edit=\"home-ges2-title\"]",
+      "value": "Медиаторы ГЭС-2"
+    },
+    {
+      "section": "Главная / Медиаторы ГЭС-2",
+      "label": "Описание",
+      "type": "textarea",
+      "selector": "[data-edit=\"home-ges2-desc\"]",
+      "value": "Небольшой тираж, тестовые образцы, финальные примерки и высокий уровень детализации."
+    },
+    {
+      "section": "Главная / Ветровки для поиска",
+      "label": "Картинка",
+      "type": "image",
+      "selector": "[data-edit=\"home-yandex-img\"]",
+      "value": "assets/named/yandex-search-01-white-jacket-flat.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Главная / Ветровки для поиска",
+      "label": "Рубрика",
+      "type": "text",
+      "selector": "[data-edit=\"home-yandex-kicker\"]",
+      "value": "Yandex Search"
+    },
+    {
+      "section": "Главная / Ветровки для поиска",
+      "label": "Заголовок",
+      "type": "text",
+      "selector": "[data-edit=\"home-yandex-title\"]",
+      "value": "Ветровки для поиска"
+    },
+    {
+      "section": "Главная / Ветровки для поиска",
+      "label": "Описание",
+      "type": "textarea",
+      "selector": "[data-edit=\"home-yandex-desc\"]",
+      "value": "1600 изделий, индивидуальные молнии, силиконовая бирка и рефлективная печать."
+    },
+    {
+      "section": "Главная / Жилеты для креативного агентства",
+      "label": "Картинка",
+      "type": "image",
+      "selector": "[data-edit=\"home-plot-img\"]",
+      "value": "assets/named/plot-01-event-team.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Главная / Жилеты для креативного агентства",
+      "label": "Рубрика",
+      "type": "text",
+      "selector": "[data-edit=\"home-plot-kicker\"]",
+      "value": "PLOT№"
+    },
+    {
+      "section": "Главная / Жилеты для креативного агентства",
+      "label": "Заголовок",
+      "type": "text",
+      "selector": "[data-edit=\"home-plot-title\"]",
+      "value": "Жилеты для креативного агентства"
+    },
+    {
+      "section": "Главная / Жилеты для креативного агентства",
+      "label": "Описание",
+      "type": "textarea",
+      "selector": "[data-edit=\"home-plot-desc\"]",
+      "value": "Форма в фирменном цвете агентства с аккуратным брендингом и чистой внутренней обработкой."
+    },
+    {
+      "section": "Главная / Каталог",
+      "label": "Мерч: картинка",
+      "type": "image",
+      "selector": "[data-edit=\"catalog-merch-img\"]",
+      "value": "assets/named/ges2-01-team-stairs.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Главная / Каталог",
+      "label": "Мерч: надпись",
+      "type": "text",
+      "selector": "[data-edit=\"catalog-merch-kicker\"]",
+      "value": "каталог"
+    },
+    {
+      "section": "Главная / Каталог",
+      "label": "Мерч: заголовок",
+      "type": "text",
+      "selector": "[data-edit=\"catalog-merch-title\"]",
+      "value": "МЕРЧ"
+    },
+    {
+      "section": "Главная / Каталог",
+      "label": "Мерч: кнопка",
+      "type": "text",
+      "selector": "[data-edit=\"catalog-merch-button\"]",
+      "value": "Изучить каталог"
+    },
+    {
+      "section": "Главная / Каталог",
+      "label": "Форма: картинка",
+      "type": "image",
+      "selector": "[data-edit=\"catalog-form-img\"]",
+      "value": "assets/home/form-flatlays.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Главная / Каталог",
+      "label": "Форма: надпись",
+      "type": "text",
+      "selector": "[data-edit=\"catalog-form-kicker\"]",
+      "value": "каталог"
+    },
+    {
+      "section": "Главная / Каталог",
+      "label": "Форма: заголовок",
+      "type": "text",
+      "selector": "[data-edit=\"catalog-form-title\"]",
+      "value": "ФОРМА"
+    },
+    {
+      "section": "Главная / Каталог",
+      "label": "Форма: кнопка",
+      "type": "text",
+      "selector": "[data-edit=\"catalog-form-button\"]",
+      "value": "Изучить каталог"
+    },
+    {
+      "section": "Главная / Коллекция SS26",
+      "label": "Картинка",
+      "type": "image",
+      "selector": "[data-edit=\"home-archivarius-img\"]",
+      "value": "assets/named/archivarius-05-checked-hood-look.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Главная / Коллекция SS26",
+      "label": "Рубрика",
+      "type": "text",
+      "selector": "[data-edit=\"home-archivarius-kicker\"]",
+      "value": "Archivarius"
+    },
+    {
+      "section": "Главная / Коллекция SS26",
+      "label": "Заголовок",
+      "type": "text",
+      "selector": "[data-edit=\"home-archivarius-title\"]",
+      "value": "Коллекция SS26"
+    },
+    {
+      "section": "Главная / Коллекция SS26",
+      "label": "Описание",
+      "type": "textarea",
+      "selector": "[data-edit=\"home-archivarius-desc\"]",
+      "value": "Сложный крой, нестандартные силуэты и премиальные материалы без упрощений."
+    },
+    {
+      "section": "Главная / Шелковые аксессуары",
+      "label": "Картинка",
+      "type": "image",
+      "selector": "[data-edit=\"home-ayris-img\"]",
+      "value": "assets/named/ayris-silk-01-lifestyle-mask.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Главная / Шелковые аксессуары",
+      "label": "Рубрика",
+      "type": "text",
+      "selector": "[data-edit=\"home-ayris-kicker\"]",
+      "value": "Ayris Silk"
+    },
+    {
+      "section": "Главная / Шелковые аксессуары",
+      "label": "Заголовок",
+      "type": "text",
+      "selector": "[data-edit=\"home-ayris-title\"]",
+      "value": "Шелковые аксессуары"
+    },
+    {
+      "section": "Главная / Шелковые аксессуары",
+      "label": "Описание",
+      "type": "textarea",
+      "selector": "[data-edit=\"home-ayris-desc\"]",
+      "value": "Полный цикл от концепции до стабильного производства натурального шелка."
+    },
+    {
+      "section": "Главная / Серия взаимосвязанных задач",
+      "label": "Картинка",
+      "type": "image",
+      "selector": "[data-edit=\"home-siniy-img\"]",
+      "value": "assets/named/siniy-vsadnik-11-group-dark.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Главная / Серия взаимосвязанных задач",
+      "label": "Рубрика",
+      "type": "text",
+      "selector": "[data-edit=\"home-siniy-kicker\"]",
+      "value": "Siniy Vsadnik"
+    },
+    {
+      "section": "Главная / Серия взаимосвязанных задач",
+      "label": "Заголовок",
+      "type": "text",
+      "selector": "[data-edit=\"home-siniy-title\"]",
+      "value": "Серия взаимосвязанных задач"
+    },
+    {
+      "section": "Главная / Серия взаимосвязанных задач",
+      "label": "Описание",
+      "type": "textarea",
+      "selector": "[data-edit=\"home-siniy-desc\"]",
+      "value": "Несколько коллекций с разной логикой внутри одного производственного подхода."
+    },
+    {
+      "section": "Главная / Дизайн и технология",
+      "label": "Картинка",
+      "type": "image",
+      "selector": "[data-edit=\"home-kruzhok-img\"]",
+      "value": "assets/named/kruzhok-01-brown-jumpsuit.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Главная / Дизайн и технология",
+      "label": "Рубрика",
+      "type": "text",
+      "selector": "[data-edit=\"home-kruzhok-kicker\"]",
+      "value": "Kruzhok"
+    },
+    {
+      "section": "Главная / Дизайн и технология",
+      "label": "Заголовок",
+      "type": "text",
+      "selector": "[data-edit=\"home-kruzhok-title\"]",
+      "value": "Дизайн и технология"
+    },
+    {
+      "section": "Главная / Дизайн и технология",
+      "label": "Описание",
+      "type": "textarea",
+      "selector": "[data-edit=\"home-kruzhok-desc\"]",
+      "value": "Капсулы и текстильная линейка, где решения нужно было постоянно проверять и корректировать."
+    },
+    {
+      "section": "Главная / Сложные обработки",
+      "label": "Картинка",
+      "type": "image",
+      "selector": "[data-edit=\"home-oganesyan-img\"]",
+      "value": "assets/named/oganesyan-04-light-look.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Главная / Сложные обработки",
+      "label": "Рубрика",
+      "type": "text",
+      "selector": "[data-edit=\"home-oganesyan-kicker\"]",
+      "value": "Oganesyan"
+    },
+    {
+      "section": "Главная / Сложные обработки",
+      "label": "Заголовок",
+      "type": "text",
+      "selector": "[data-edit=\"home-oganesyan-title\"]",
+      "value": "Сложные обработки"
+    },
+    {
+      "section": "Главная / Сложные обработки",
+      "label": "Описание",
+      "type": "textarea",
+      "selector": "[data-edit=\"home-oganesyan-desc\"]",
+      "value": "Чистые швы, точность соединений и отдельная технологическая проработка."
+    },
+    {
+      "section": "Блок УТП",
+      "label": "Картинка",
+      "type": "image",
+      "selector": "[data-edit=\"company-img\"]",
+      "value": "assets/home/utp-patterns-photo.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Блок УТП",
+      "label": "Заголовок",
+      "type": "textarea",
+      "selector": "[data-edit=\"company-title\"]",
+      "value": "Делаем корпоративную одежду, которая работает."
+    },
+    {
+      "section": "Блок УТП",
+      "label": "Описание",
+      "type": "textarea",
+      "selector": "[data-edit=\"company-copy-1\"]",
+      "value": "От простых тиражей до сложных системных решений. Мерч, форма, коллекции — все, что связано с одеждой в b2b."
+    },
+    {
+      "section": "Блок УТП",
+      "label": "Пункт 1",
+      "type": "text",
+      "selector": "[data-edit=\"company-li-1\"]",
+      "value": "Сделаем тираж мерча."
+    },
+    {
+      "section": "Блок УТП",
+      "label": "Пункт 2",
+      "type": "text",
+      "selector": "[data-edit=\"company-li-2\"]",
+      "value": "Соберем форму для команды."
+    },
+    {
+      "section": "Блок УТП",
+      "label": "Пункт 3",
+      "type": "text",
+      "selector": "[data-edit=\"company-li-3\"]",
+      "value": "Разработаем коллекцию с нуля."
+    },
+    {
+      "section": "Блок УТП",
+      "label": "Пункт 4",
+      "type": "text",
+      "selector": "[data-edit=\"company-li-4\"]",
+      "value": "Реализуем сложный проект."
+    },
+    {
+      "section": "Блок УТП",
+      "label": "Финальная строка",
+      "type": "textarea",
+      "selector": "[data-edit=\"company-copy-2\"]",
+      "value": "Масштаб может быть разным. Подход — один: собрать решение точно."
+    },
+    {
+      "section": "Блок УТП",
+      "label": "Кнопка",
+      "type": "text",
+      "selector": "[data-edit=\"company-button\"]",
+      "value": "Заказать просчёт"
+    },
+    {
+      "section": "Разделитель дизайнеров",
+      "label": "Картинка",
+      "type": "image",
+      "selector": "[data-edit=\"designer-divider-img\"]",
+      "value": "assets/named/siniy-vsadnik-11-group-dark.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Разделитель дизайнеров",
+      "label": "Заголовок",
+      "type": "textarea",
+      "selector": "[data-edit=\"designer-divider-title\"]",
+      "value": "Работа с брендами напрямую влияет на то, как мы подходим к корпоративной одежде."
+    },
+    {
+      "section": "Разделитель дизайнеров",
+      "label": "Описание",
+      "type": "textarea",
+      "selector": "[data-edit=\"designer-divider-copy\"]",
+      "value": "Те же требования к форме, материалам и деталям переносятся в тиражные задачи. Поэтому дизайнерские проекты — это неотъемлемая часть общей системы."
+    },
+    {
+      "section": "Клиенты",
+      "label": "Картинка логотипов",
+      "type": "image",
+      "selector": "[data-edit=\"clients-img\"]",
+      "value": "assets/named/client-logos-grid.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Первый экран",
+      "label": "Слайд 1: раздел",
+      "type": "text",
+      "selector": "[data-edit=\"hero-1\"]",
+      "value": "Интервью",
+      "attr": "data-eyebrow"
+    },
+    {
+      "section": "Первый экран",
+      "label": "Слайд 1: подпись",
+      "type": "textarea",
+      "selector": "[data-edit=\"hero-1\"]",
+      "value": "Почему вообще существует UNIFORMS? Большой разговор с командой о рынке, продукте и производстве.",
+      "attr": "data-caption"
+    },
+    {
+      "section": "Первый экран",
+      "label": "Слайд 1: картинка",
+      "type": "image",
+      "selector": "[data-edit=\"hero-1-img\"]",
+      "value": "assets/named/interview-03-team-three.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Первый экран",
+      "label": "Слайд 2: раздел",
+      "type": "text",
+      "selector": "[data-edit=\"hero-2\"]",
+      "value": "Обратная связь",
+      "attr": "data-eyebrow"
+    },
+    {
+      "section": "Первый экран",
+      "label": "Слайд 2: подпись",
+      "type": "textarea",
+      "selector": "[data-edit=\"hero-2\"]",
+      "value": "Прийти можно с любым запросом — от сложной системы до базового тиража.",
+      "attr": "data-caption"
+    },
+    {
+      "section": "Первый экран",
+      "label": "Слайд 2: картинка",
+      "type": "image",
+      "selector": "[data-edit=\"hero-2-img\"]",
+      "value": "assets/named/interview-01-sewing-action.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Первый экран",
+      "label": "Слайд 3: раздел",
+      "type": "text",
+      "selector": "[data-edit=\"hero-3\"]",
+      "value": "Каталог",
+      "attr": "data-eyebrow"
+    },
+    {
+      "section": "Первый экран",
+      "label": "Слайд 3: подпись",
+      "type": "textarea",
+      "selector": "[data-edit=\"hero-3\"]",
+      "value": "Базовые модели, отработанные большим количеством заказов и проверенные практикой.",
+      "attr": "data-caption"
+    },
+    {
+      "section": "Первый экран",
+      "label": "Слайд 3: картинка",
+      "type": "image",
+      "selector": "[data-edit=\"hero-3-img\"]",
+      "value": "assets/classic/0810 5п.jpg",
+      "attr": "src"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "title": "Kruzhok",
+  "fields": [
+    {
+      "section": "Шапка статьи",
+      "label": "Рубрика",
+      "type": "text",
+      "selector": "[data-edit=\"article-category\"]",
+      "value": "Дизайн и технология"
+    },
+    {
+      "section": "Шапка статьи",
+      "label": "Заголовок",
+      "type": "text",
+      "selector": "[data-edit=\"article-title\"]",
+      "value": "Kruzhok"
+    },
+    {
+      "section": "Шапка статьи",
+      "label": "Подзаголовок",
+      "type": "textarea",
+      "selector": "[data-edit=\"article-dek\"]",
+      "value": "Капсулы и текстильная линейка, где решения проверялись на уровне образцов."
+    },
+    {
+      "section": "Шапка статьи",
+      "label": "Кредит",
+      "type": "textarea",
+      "selector": "[data-edit=\"article-credit\"]",
+      "value": "UNIFORMS"
+    },
+    {
+      "section": "Kruzhok / страница 32",
+      "label": "kruzhok-img-1",
+      "type": "image",
+      "selector": "[data-edit=\"kruzhok-img-1\"]",
+      "value": "../assets/named/kruzhok-01-brown-jumpsuit.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Kruzhok / страница 32",
+      "label": "Kruzhok",
+      "type": "text",
+      "selector": "[data-edit=\"kruzhok-title\"]",
+      "value": "Kruzhok"
+    },
+    {
+      "section": "Kruzhok / страница 32",
+      "label": "Сотрудничество с Kruzhok — это пример работы",
+      "type": "textarea",
+      "selector": "[data-edit=\"kruzhok-p32-1\"]",
+      "value": "Сотрудничество с Kruzhok — это пример работы на пересечении дизайна и технологии. За год было выпущено несколько капсул и полностью разработана текстильная линейка для коллекции Burygin. Проект изначально предполагал поиск решений, а не повторение готовых подходов."
+    },
+    {
+      "section": "Kruzhok / страница 32",
+      "label": "Работа велась с нестандартными материалами и",
+      "type": "textarea",
+      "selector": "[data-edit=\"kruzhok-p32-2\"]",
+      "value": "Работа велась с нестандартными материалами и конструкциями. Многие вещи требовали дополнительной проработки на уровне образцов: как ведет себя ткань, как она реагирует на обработку, как сохраняется форма."
+    },
+    {
+      "section": "Kruzhok / страница 32",
+      "label": "Это не те задачи, которые можно закрыть по ш",
+      "type": "textarea",
+      "selector": "[data-edit=\"kruzhok-p32-3\"]",
+      "value": "Это не те задачи, которые можно закрыть по шаблону — здесь важно было постоянно проверять и корректировать решения."
+    },
+    {
+      "section": "Kruzhok / страница 33",
+      "label": "kruzhok-img-2",
+      "type": "image",
+      "selector": "[data-edit=\"kruzhok-img-2\"]",
+      "value": "../assets/named/kruzhok-04-denim-jacket-flat.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Kruzhok / страница 33",
+      "label": "kruzhok-img-3",
+      "type": "image",
+      "selector": "[data-edit=\"kruzhok-img-3\"]",
+      "value": "../assets/named/kruzhok-07-couple-western-look.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Kruzhok / страница 33",
+      "label": "kruzhok-img-4",
+      "type": "image",
+      "selector": "[data-edit=\"kruzhok-img-4\"]",
+      "value": "../assets/named/kruzhok-08-diamond-jacket.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Kruzhok / страница 33",
+      "label": "Именно в таких условиях становится видно, на",
+      "type": "textarea",
+      "selector": "[data-edit=\"kruzhok-p33\"]",
+      "value": "Именно в таких условиях становится видно, насколько точно выстроен процесс. Коллекции получились выразительными, но при этом собранными: сложные визуальные решения не разрушили качество исполнения, а усилили его."
+    }
+  ]
+}

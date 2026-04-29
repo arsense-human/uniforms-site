@@ -1,0 +1,935 @@
+{
+  "version": 1,
+  "title": "Интервью",
+  "fields": [
+    {
+      "section": "Шапка статьи",
+      "label": "Рубрика",
+      "type": "text",
+      "selector": "[data-edit=\"article-category\"]",
+      "value": "Интервью"
+    },
+    {
+      "section": "Шапка статьи",
+      "label": "Заголовок",
+      "type": "text",
+      "selector": "[data-edit=\"article-title\"]",
+      "value": "Интервью с командой UNIFORMS"
+    },
+    {
+      "section": "Шапка статьи",
+      "label": "Подзаголовок",
+      "type": "textarea",
+      "selector": "[data-edit=\"article-dek\"]",
+      "value": "Большой разговор с командой о рынке, \nпродукте и производстве."
+    },
+    {
+      "section": "Шапка статьи",
+      "label": "Кредит",
+      "type": "textarea",
+      "selector": "[data-edit=\"article-credit\"]",
+      "value": "Фотограф: Мария Абдулаева \nСтилист: Арсений Бетехтин \nПродюсер: Гасанов Денис \nВ кадре: Арсений Бетехтин, Егор Рыжов, Гасанов Денис \nТекст: Кира Ким"
+    },
+    {
+      "section": "Интервью / страница 4",
+      "label": "int-img-1",
+      "type": "image",
+      "selector": "[data-edit=\"int-img-1\"]",
+      "value": "assets/named/interview-01-sewing-action.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Интервью / страница 4",
+      "label": "Фотограф: Мария Абдулаева\nСтилист: Арсений Б",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-credits\"]",
+      "value": "",
+      "style": {
+        "justifySelf": "center",
+        "textAlign": "center",
+        "maxWidth": "680px"
+      }
+    },
+    {
+      "section": "Интервью / страница 4",
+      "label": "Мы поговорили с основателем и CEO UNIFORMS А",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-p4\"]",
+      "value": "Мы поговорили с основателем и CEO UNIFORMS Арсением \nБетехтиным, а также с ключевыми участниками команды о том, \nкак сегодня устроен рынок корпоративной одежды, почему мерч \nчасто не работает так, как задумывался, и что на самом деле \nстоит за хорошим продуктом.",
+      "style": {
+        "fontSize": "36px",
+        "justifySelf": "center",
+        "textAlign": "center",
+        "fontFamily": "var(--font-serif)",
+        "lineHeight": "1.18",
+        "maxWidth": "1120px",
+        "textTransform": "none"
+      }
+    },
+    {
+      "section": "Интервью / страница 5",
+      "label": "— Почему вообще существует UNIFORMS?",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-q5\"]",
+      "value": "— Почему вообще существует UNIFORMS?",
+      "style": {
+        "fontSize": "19px",
+        "fontWeight": "600"
+      }
+    },
+    {
+      "section": "Интервью / страница 5",
+      "label": "Арсений: UNIFORMS — это не компания «с нуля»",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-a5-1\"]",
+      "value": "Арсений: UNIFORMS — это не компания «с нуля». Это продолжение производства, которое существует с 1993 года под брендом «Невероятная коллекция». За это время мы сделали очень много больших проектов — работали с международными компаниями, одевали S7, делали проекты для Олимпиады, работали с крупными глобальными брендами.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontWeight": "400",
+        "textTransform": "none",
+        "fontSize": "19px"
+      }
+    },
+    {
+      "section": "Интервью / страница 5",
+      "label": "На Арсении: снегоболотники — Снежный барс. О",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-look5\"]",
+      "value": "На Арсении: снегоболотники — Снежный барс.\nОстальной образ — UNIFORMS.",
+      "style": {
+        "fontFamily": "var(--font-sans)",
+        "fontSize": "10px",
+        "lineHeight": "1.25",
+        "justifySelf": "start",
+        "textAlign": "left"
+      },
+      "captionBoxStyle": {
+        "left": "clamp(12px, 1.6vw, 22px)",
+        "bottom": "clamp(12px, 1.6vw, 22px)",
+        "right": "auto",
+        "top": "auto",
+        "maxWidth": "420px",
+        "justifyItems": "start"
+      }
+    },
+    {
+      "section": "Интервью / страница 5",
+      "label": "Но это была другая реальность. В 2020 году р",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-a5-2\"]",
+      "value": "Но это была другая реальность. В 2020 году рынок сильно изменился. Мы потеряли значительную часть клиентов и команды. И стало понятно — нужно пересобирать все. В 2021 году мы сделали ребрендинг и стали UNIFORMS. И уже в этой новой конфигурации мы оказались в ситуации, где по сути были просто производством."
+    },
+    {
+      "section": "Интервью / страница 5",
+      "label": "К нам начали приходить с запросами, и очень ",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-a5-3\"]",
+      "value": "К нам начали приходить с запросами, и очень быстро стало видно — мы можем делать это сильно лучше. Но сами запросы часто были собраны неправильно. И тогда стало понятно: если мы не будем участвовать в формировании запроса — результата не будет."
+    },
+    {
+      "section": "Интервью / страница 5",
+      "label": "int-img-2",
+      "type": "image",
+      "selector": "[data-edit=\"int-img-2\"]",
+      "value": "assets/named/interview-02-sewing-machine.jpg",
+      "attr": "src",
+      "style": {
+        "justifySelf": "stretch",
+        "objectFit": "contain",
+        "marginBottom": "-5px"
+      }
+    },
+    {
+      "section": "Интервью / страница 6",
+      "label": "int-img-3",
+      "type": "image",
+      "selector": "[data-edit=\"int-img-3\"]",
+      "value": "assets/named/interview-03-team-three.jpg",
+      "attr": "src",
+      "style": {
+        "justifySelf": "stretch",
+        "objectFit": "contain"
+      }
+    },
+    {
+      "section": "Интервью / страница 6",
+      "label": "На Егоре: весь образ — UNIFORMS.",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-look6-1\"]",
+      "value": "На Егоре: весь образ — UNIFORMS.\n\nНа Арсении: брюки и рубашка — Siniy Vsadnik.\nПиджак — Personal project.\n\nНа Денисе: брюки, жилет, рубашка — Name.\nПлаток — ГЭС2 x LIME.",
+      "style": {
+        "fontFamily": "var(--font-sans)",
+        "fontSize": "10px",
+        "lineHeight": "1.25",
+        "justifySelf": "start",
+        "textAlign": "left"
+      },
+      "captionBoxStyle": {
+        "left": "clamp(12px, 1.6vw, 22px)",
+        "bottom": "clamp(12px, 1.6vw, 22px)",
+        "right": "auto",
+        "top": "auto",
+        "maxWidth": "420px",
+        "justifyItems": "start"
+      }
+    },
+    {
+      "section": "Интервью / страница 6",
+      "label": "На Арсении: брюки и рубашка — Siniy Vsadnik.",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-look6-2\"]",
+      "value": "",
+      "style": {
+        "fontFamily": "var(--font-sans)",
+        "fontSize": "10px",
+        "lineHeight": "1.25",
+        "justifySelf": "start",
+        "textAlign": "left"
+      },
+      "captionBoxStyle": {
+        "left": "clamp(12px, 1.6vw, 22px)",
+        "bottom": "clamp(12px, 1.6vw, 22px)",
+        "right": "auto",
+        "top": "auto",
+        "maxWidth": "420px",
+        "justifyItems": "start"
+      }
+    },
+    {
+      "section": "Интервью / страница 6",
+      "label": "На Денисе: брюки, жилет, рубашка — Name. Пла",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-look6-3\"]",
+      "value": "",
+      "style": {
+        "fontFamily": "var(--font-sans)",
+        "fontSize": "10px",
+        "lineHeight": "1.25",
+        "justifySelf": "start",
+        "textAlign": "left"
+      },
+      "captionBoxStyle": {
+        "left": "clamp(12px, 1.6vw, 22px)",
+        "bottom": "clamp(12px, 1.6vw, 22px)",
+        "right": "auto",
+        "top": "auto",
+        "maxWidth": "420px",
+        "justifyItems": "start"
+      }
+    },
+    {
+      "section": "Интервью / страница 6",
+      "label": "Рынок не слабый. Он просто не умеет собирать",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-quote6\"]",
+      "value": "Рынок не слабый. \nОн просто не умеет собирать продукт.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontSize": "36px"
+      }
+    },
+    {
+      "section": "Интервью / страница 7",
+      "label": "int-img-4",
+      "type": "image",
+      "selector": "[data-edit=\"int-img-4\"]",
+      "value": "assets/named/interview-04-denim-seated.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Интервью / страница 7",
+      "label": "На Арсении: брюки — Kruzhok x Levis. Футболк",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-look7\"]",
+      "value": "На Арсении: брюки — Kruzhok x Levis.\nФутболка — Name. Рубашка — UNIFORMS.\nШляпа — Kruzhok.",
+      "style": {
+        "fontFamily": "var(--font-sans)",
+        "fontSize": "10px",
+        "lineHeight": "1.25",
+        "justifySelf": "start",
+        "textAlign": "left"
+      },
+      "captionBoxStyle": {
+        "left": "clamp(12px, 1.6vw, 22px)",
+        "bottom": "clamp(12px, 1.6vw, 22px)",
+        "right": "auto",
+        "top": "auto",
+        "maxWidth": "420px",
+        "justifyItems": "start"
+      }
+    },
+    {
+      "section": "Интервью / страница 7",
+      "label": "— Что вас больше всего раздражает в рынке?",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-q7\"]",
+      "value": "— Что вас больше всего раздражает в рынке?",
+      "style": {
+        "fontSize": "19px",
+        "fontWeight": "600"
+      }
+    },
+    {
+      "section": "Интервью / страница 7",
+      "label": "Арсений: Неспособность сказать «нет». Ghosti",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-a7-1\"]",
+      "value": "Арсений: Неспособность сказать «нет». Ghosting придумали не зумеры. Его придумали менеджеры, которые не умеют честно отказать.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontWeight": "400",
+        "textTransform": "none",
+        "fontSize": "19px"
+      }
+    },
+    {
+      "section": "Интервью / страница 7",
+      "label": "И вторая вещь — бесплатная работа. Рынок при",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-a7-2\"]",
+      "value": "И вторая вещь — бесплатная работа. Рынок привык, что можно получить идею, расчеты, дизайн — и ничего за это не заплатить.",
+      "style": {
+        "fontSize": "19px"
+      }
+    },
+    {
+      "section": "Интервью / страница 7",
+      "label": "Егор: В этот момент работа превращается в им",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-a7-3\"]",
+      "value": "Егор: В этот момент работа превращается в имитацию.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontWeight": "400",
+        "textTransform": "none",
+        "fontSize": "19px"
+      }
+    },
+    {
+      "section": "Интервью / страница 7",
+      "label": "Арсений: Мы в это не играем.",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-a7-4\"]",
+      "value": "Арсений: Мы в это не играем.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontWeight": "400",
+        "textTransform": "none",
+        "fontSize": "19px"
+      }
+    },
+    {
+      "section": "Интервью / страница 8",
+      "label": "— Что вы делаете по-другому?",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-q8-1\"]",
+      "value": "— Что вы делаете по-другому?",
+      "style": {
+        "fontFamily": "var(--font-sans)",
+        "fontSize": "19px",
+        "fontWeight": "600"
+      }
+    },
+    {
+      "section": "Интервью / страница 8",
+      "label": "Егор: Обычно идея живет отдельно от производ",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-a8-1\"]",
+      "value": "Егор: Обычно идея живет отдельно от производства. Ее сначала придумывают, потом пытаются реализовать, и в какой-то момент все начинает сыпаться. Моя задача — чтобы этого не происходило. Я смотрю на проект с точки зрения реальности: материалы, поставщики, сроки, экономика. Если что-то не собирается — я говорю об этом сразу.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontWeight": "400",
+        "textTransform": "none",
+        "fontSize": "19px"
+      }
+    },
+    {
+      "section": "Интервью / страница 8",
+      "label": "Арсений: Мы не упрощаем — мы уточняем. И за ",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-a8-2\"]",
+      "value": "Арсений: Мы не упрощаем — мы уточняем. И за счет этого результат становится сильнее.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontWeight": "400",
+        "textTransform": "none",
+        "fontSize": "19px"
+      }
+    },
+    {
+      "section": "Интервью / страница 8",
+      "label": "Кредиты образа Егора",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-look8-1\"]",
+      "value": "На Егоре: брюки — Siniy Vsadnik.\nХуди — Hamcus x Adidas.",
+      "style": {
+        "fontFamily": "var(--font-sans)",
+        "fontSize": "10px",
+        "lineHeight": "1.25",
+        "justifySelf": "start",
+        "textAlign": "left"
+      },
+      "captionBoxStyle": {
+        "left": "clamp(12px, 1.6vw, 22px)",
+        "bottom": "clamp(12px, 1.6vw, 22px)",
+        "right": "auto",
+        "top": "auto",
+        "maxWidth": "420px",
+        "justifyItems": "start"
+      }
+    },
+    {
+      "section": "Интервью / страница 8",
+      "label": "Кредиты образа Арсения",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-look8-2\"]",
+      "value": "На Арсении: брюки — Siniy Vsadnik.\nКуртка — Archivarius.",
+      "style": {
+        "fontFamily": "var(--font-sans)",
+        "fontSize": "10px",
+        "lineHeight": "1.25",
+        "justifySelf": "start",
+        "textAlign": "left"
+      },
+      "captionBoxStyle": {
+        "left": "clamp(12px, 1.6vw, 22px)",
+        "bottom": "clamp(12px, 1.6vw, 22px)",
+        "right": "auto",
+        "top": "auto",
+        "maxWidth": "420px",
+        "justifyItems": "start"
+      }
+    },
+    {
+      "section": "Интервью / страница 8",
+      "label": "— Как вы понимаете, что продукт получился?",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-q8-2\"]",
+      "value": "— Как вы понимаете, что продукт получился?",
+      "style": {
+        "fontSize": "19px",
+        "fontFamily": "var(--font-sans)",
+        "fontWeight": "600"
+      }
+    },
+    {
+      "section": "Интервью / страница 8",
+      "label": "Арсений: Если вещь существует только как иде",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-a8-3\"]",
+      "value": "Арсений: Если вещь существует только как идея — это не продукт. Если ее невозможно нормально произвести — это тоже не продукт. Продукт — это когда идея, конструкция и производство совпали.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontWeight": "400",
+        "textTransform": "none",
+        "fontSize": "19px"
+      }
+    },
+    {
+      "section": "Интервью / страница 8",
+      "label": "Егор: И когда это можно повторить без потери",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-a8-4\"]",
+      "value": "Егор: И когда это можно повторить без потери качества.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontWeight": "400",
+        "textTransform": "none",
+        "fontSize": "19px"
+      }
+    },
+    {
+      "section": "Интервью / страница 8",
+      "label": "int-img-5",
+      "type": "image",
+      "selector": "[data-edit=\"int-img-5\"]",
+      "value": "assets/named/interview-05-egor-hoodie-shelves.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Интервью / страница 8",
+      "label": "int-img-6",
+      "type": "image",
+      "selector": "[data-edit=\"int-img-6\"]",
+      "value": "assets/named/interview-06-arseniy-blue-pants.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Интервью / страница 9",
+      "label": "int-img-7",
+      "type": "image",
+      "selector": "[data-edit=\"int-img-7\"]",
+      "value": "assets/named/interview-7-denis-fabric-roll.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Интервью / страница 9",
+      "label": "На Денисе: джинсы — Ushatava. Рубашка — UNIF",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-look9\"]",
+      "value": "На Денисе: джинсы — Ushatava.\nРубашка — UNIFORMS. Куртка — Archivarius.",
+      "style": {
+        "fontFamily": "var(--font-sans)",
+        "fontSize": "10px",
+        "lineHeight": "1.25",
+        "justifySelf": "start",
+        "textAlign": "left"
+      },
+      "captionBoxStyle": {
+        "left": "clamp(12px, 1.6vw, 22px)",
+        "bottom": "clamp(12px, 1.6vw, 22px)",
+        "right": "auto",
+        "top": "auto",
+        "maxWidth": "420px",
+        "justifyItems": "start"
+      }
+    },
+    {
+      "section": "Интервью / страница 9",
+      "label": "Плохой продукт появляется не из-за сложности",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-quote9\"]",
+      "value": "Плохой продукт появляется не из-за сложности. А из-за неточности.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontSize": "36px"
+      }
+    },
+    {
+      "section": "Интервью / страница 10",
+      "label": "— Как устроена команда?",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-q10-1\"]",
+      "value": "— Как устроена команда?",
+      "style": {
+        "fontFamily": "var(--font-sans)",
+        "fontSize": "21px",
+        "fontWeight": "600"
+      }
+    },
+    {
+      "section": "Интервью / страница 10",
+      "label": "Арсений: Я отвечаю за результат и общее виде",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-a10-1\"]",
+      "value": "Арсений: Я отвечаю за результат и общее видение. За то, чтобы проект вообще имел смысл.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontWeight": "400",
+        "textTransform": "none",
+        "fontSize": "19px"
+      }
+    },
+    {
+      "section": "Интервью / страница 10",
+      "label": "Егор: Я отвечаю за реализацию. Экономика, по",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-a10-2\"]",
+      "value": "Егор: Я отвечаю за реализацию. Экономика, поставщики, производство.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontWeight": "400",
+        "textTransform": "none",
+        "fontSize": "19px"
+      }
+    },
+    {
+      "section": "Интервью / страница 10",
+      "label": "Денис: А я отвечаю за то, как этот продукт ж",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-a10-3\"]",
+      "value": "Денис: А я отвечаю за то, как этот продукт живет дальше.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontWeight": "400",
+        "textTransform": "none",
+        "fontSize": "19px"
+      }
+    },
+    {
+      "section": "Интервью / страница 10",
+      "label": "— Что значит «живет дальше»?",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-q10-2\"]",
+      "value": "— Что значит «живет дальше»?",
+      "style": {
+        "fontFamily": "var(--font-sans)",
+        "fontSize": "19px",
+        "fontWeight": "600"
+      }
+    },
+    {
+      "section": "Интервью / страница 10",
+      "label": "Денис: Мы делаем не просто вещи. Это всегда ",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-a10-4\"]",
+      "value": "Денис: Мы делаем не просто вещи. Это всегда носитель смысла — ценностей компании, ее настроения, ее позиции. Это нужно правильно показать. Съемка, визуал, команда, атмосфера — это все влияет на то, как вещь считывается. Если это не сделать — половина работы теряется.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontWeight": "400",
+        "textTransform": "none",
+        "fontSize": "19px"
+      }
+    },
+    {
+      "section": "Интервью / страница 10",
+      "label": "Арсений: В этот момент вещь становится инстр",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-a10-5\"]",
+      "value": "Арсений: В этот момент вещь становится инструментом коммуникации.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontWeight": "400",
+        "textTransform": "none",
+        "fontSize": "19px"
+      }
+    },
+    {
+      "section": "Интервью / страница 10",
+      "label": "int-img-8",
+      "type": "image",
+      "selector": "[data-edit=\"int-img-8\"]",
+      "value": "assets/named/interview-8-three-in-the-mirror.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Интервью / страница 11",
+      "label": "Можно сделать хорошую вещь и убить ее плохой",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-quote11\"]",
+      "value": "Можно сделать хорошую вещь и убить ее плохой подачей.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontSize": "clamp(42px, 5vw, 96px)",
+        "lineHeight": "0.95",
+        "textAlign": "left",
+        "textTransform": "none",
+        "color": "#111111",
+        "justifySelf": "start",
+        "maxWidth": "820px"
+      }
+    },
+    {
+      "section": "Интервью / страница 12",
+      "label": "— Как вы работаете с клиентами?",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-q12-1\"]",
+      "value": "— Как вы работаете с клиентами?",
+      "style": {
+        "fontSize": "19px",
+        "fontWeight": "600"
+      }
+    },
+    {
+      "section": "Интервью / страница 12",
+      "label": "Егор: Мы не делаем «как попросили». Если зап",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-a12-1\"]",
+      "value": "Егор: Мы не делаем «как попросили». Если запрос нерабочий — мы говорим об этом сразу.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontWeight": "400",
+        "textTransform": "none",
+        "fontSize": "19px"
+      }
+    },
+    {
+      "section": "Интервью / страница 12",
+      "label": "Арсений: И почти всегда предлагаем альтернат",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-a12-2\"]",
+      "value": "Арсений: И почти всегда предлагаем альтернативу. Потому что наша задача — не выполнить ТЗ, а сделать продукт, который реально работает. Иногда это полный цикл. Иногда — быстрый запуск. Процесс подстраивается под задачу, а не наоборот.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontWeight": "400",
+        "textTransform": "none",
+        "fontSize": "19px"
+      }
+    },
+    {
+      "section": "Интервью / страница 12",
+      "label": "— Были проекты, где это особенно проявилось?",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-q12-2\"]",
+      "value": "— Были проекты, где это особенно проявилось?",
+      "style": {
+        "fontSize": "19px",
+        "fontWeight": "600"
+      }
+    },
+    {
+      "section": "Интервью / страница 12",
+      "label": "Арсений: Практически все. Например, проекты ",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-a12-3\"]",
+      "value": "Арсений: Практически все. Например, проекты уровня ГЭС-2 — там нет задачи «сшить тираж». Это всегда совместная работа: от первых образцов до финальной примерки, с постоянной доработкой по ходу процесса.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontWeight": "400",
+        "textTransform": "none",
+        "fontSize": "19px"
+      }
+    },
+    {
+      "section": "Интервью / страница 12",
+      "label": "Егор: Это не «исполнение». Это сборка резуль",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-a12-4\"]",
+      "value": "Егор: Это не «исполнение». Это сборка результата.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontWeight": "400",
+        "textTransform": "none",
+        "fontSize": "19px"
+      }
+    },
+    {
+      "section": "Интервью / страница 12",
+      "label": "— Что происходит, когда проект становится сл",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-q12-3\"]",
+      "value": "— Что происходит, когда проект становится сложным?",
+      "style": {
+        "fontSize": "19px",
+        "fontFamily": "var(--font-sans)",
+        "fontWeight": "600"
+      }
+    },
+    {
+      "section": "Интервью / страница 12",
+      "label": "Арсений: Сложный проект — это нормальный про",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-a12-5\"]",
+      "value": "Арсений: Сложный проект — это нормальный проект.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontWeight": "400",
+        "textTransform": "none",
+        "fontSize": "18px"
+      }
+    },
+    {
+      "section": "Интервью / страница 12",
+      "label": "Егор: Сложность — это не проблема. Проблема ",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-a12-6\"]",
+      "value": "Егор: Сложность — это не проблема. Проблема — когда нет понимания, что ты делаешь.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontWeight": "400",
+        "textTransform": "none",
+        "fontSize": "19px"
+      }
+    },
+    {
+      "section": "Интервью / страница 12",
+      "label": "— С кем вам комфортно работать?",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-q12-4\"]",
+      "value": "— С кем вам комфортно работать?",
+      "style": {
+        "fontSize": "19px",
+        "fontWeight": "600"
+      }
+    },
+    {
+      "section": "Интервью / страница 12",
+      "label": "Арсений: С теми, кто понимает, что форма — э",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-a12-7\"]",
+      "value": "Арсений: С теми, кто понимает, что форма — это не просто одежда. Но это не значит, что мы работаем только со сложными задачами.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontWeight": "400",
+        "textTransform": "none",
+        "fontSize": "19px"
+      }
+    },
+    {
+      "section": "Интервью / страница 12",
+      "label": "Егор: У нас есть обширный каталог базовых мо",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-a12-8\"]",
+      "value": "Егор: У нас есть обширный каталог базовых моделей, который отработан большим количеством заказов и проверен практикой.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontWeight": "400",
+        "textTransform": "none",
+        "fontSize": "19px"
+      }
+    },
+    {
+      "section": "Интервью / страница 12",
+      "label": "Арсений: Поэтому к нам можно прийти с любым ",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-a12-9\"]",
+      "value": "Арсений: Поэтому к нам можно прийти с любым запросом — от сложной системы до базового тиража.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontWeight": "400",
+        "textTransform": "none",
+        "fontSize": "19px"
+      }
+    },
+    {
+      "section": "Интервью / страница 12",
+      "label": "— Что насчет простых вещей?",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-q12-5\"]",
+      "value": "— Что насчет простых вещей?",
+      "style": {
+        "fontSize": "19px",
+        "fontWeight": "600"
+      }
+    },
+    {
+      "section": "Интервью / страница 12",
+      "label": "Егор: Даже базовые вещи мы делаем интересно.",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-a12-10\"]",
+      "value": "Егор: Даже базовые вещи мы делаем интересно. Это не просто футболка с принтом.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontSize": "19px",
+        "fontWeight": "400",
+        "textTransform": "none"
+      }
+    },
+    {
+      "section": "Интервью / страница 12",
+      "label": "Арсений: Это вещь, которая все равно несет с",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-a12-11\"]",
+      "value": "Арсений: Это вещь, которая все равно несет смысл и поддерживает позицию компании.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontSize": "19px",
+        "fontWeight": "400",
+        "textTransform": "none"
+      }
+    },
+    {
+      "section": "Интервью / страница 12",
+      "label": "Денис: И мы помогаем этот смысл правильно по",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-a12-12\"]",
+      "value": "Денис: И мы помогаем этот смысл правильно показать. Даже простая форма, если ее грамотно подать, становится частью истории и частью идентичности.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontSize": "19px",
+        "fontWeight": "400",
+        "textTransform": "none"
+      }
+    },
+    {
+      "section": "Интервью / страница 12",
+      "label": "int-img-9",
+      "type": "image",
+      "selector": "[data-edit=\"int-img-9\"]",
+      "value": "assets/named/interview-10-egor-black-vest.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Интервью / страница 12",
+      "label": "int-img-10",
+      "type": "image",
+      "selector": "[data-edit=\"int-img-10\"]",
+      "value": "assets/named/interview-11-denis-black-vest.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Интервью / страница 12",
+      "label": "int-img-11",
+      "type": "image",
+      "selector": "[data-edit=\"int-img-11\"]",
+      "value": "assets/named/interview-09-arseniy-measuring-tape.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Интервью / страница 13",
+      "label": "int-img-12",
+      "type": "image",
+      "selector": "[data-edit=\"int-img-12\"]",
+      "value": "assets/standalone/ФОН ПРЕЗА ТКАНЬ002.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Интервью / страница 13",
+      "label": "Хороший результат — это не компромисс. Это т",
+      "type": "textarea",
+      "selector": "[data-edit=\"int-quote13\"]",
+      "value": "Хороший результат — это не компромисс. Это точное совпадение идеи, реальности и того, как это увидят.",
+      "style": {
+        "fontFamily": "var(--font-serif)",
+        "fontSize": "96px",
+        "lineHeight": "0.92",
+        "textAlign": "center",
+        "textTransform": "none",
+        "color": "#111111",
+        "justifySelf": "center",
+        "maxWidth": "1280px"
+      }
+    },
+    {
+      "section": "Интервью / дополнительные фото из photos",
+      "label": "int-extra-img-1",
+      "type": "image",
+      "selector": "[data-edit=\"int-extra-img-1\"]",
+      "value": "source-archives/photos/Photos/1 (2).jpg",
+      "attr": "src",
+      "style": {
+        "justifySelf": "start"
+      }
+    },
+    {
+      "section": "Интервью / дополнительные фото из photos",
+      "label": "int-extra-img-2",
+      "type": "image",
+      "selector": "[data-edit=\"int-extra-img-2\"]",
+      "value": "source-archives/photos/Photos/1 (18).jpg",
+      "attr": "src",
+      "style": {
+        "justifySelf": "center"
+      }
+    },
+    {
+      "section": "Интервью / дополнительные фото из photos",
+      "label": "int-extra-img-3",
+      "type": "image",
+      "selector": "[data-edit=\"int-extra-img-3\"]",
+      "value": "source-archives/photos/Photos/1 (1)-Edit.jpg",
+      "attr": "src",
+      "style": {
+        "justifySelf": "end"
+      }
+    },
+    {
+      "section": "Интервью / дополнительные фото из photos",
+      "label": "int-extra-img-4",
+      "type": "image",
+      "selector": "[data-edit=\"int-extra-img-4\"]",
+      "value": "source-archives/photos/Photos/1 (6).jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Интервью / дополнительные фото из photos",
+      "label": "int-extra-img-5",
+      "type": "image",
+      "selector": "[data-edit=\"int-extra-img-5\"]",
+      "value": "source-archives/photos/Photos/1 (29).jpg",
+      "attr": "src",
+      "style": {
+        "justifySelf": "stretch",
+        "objectFit": "contain"
+      }
+    },
+    {
+      "section": "Интервью / дополнительные фото из photos",
+      "label": "int-extra-img-6",
+      "type": "image",
+      "selector": "[data-edit=\"int-extra-img-6\"]",
+      "value": "source-archives/photos/Photos/1 (31).jpg",
+      "attr": "src"
+    }
+  ]
+}

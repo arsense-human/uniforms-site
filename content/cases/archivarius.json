@@ -1,0 +1,124 @@
+{
+  "version": 1,
+  "title": "Archivarius",
+  "fields": [
+    {
+      "section": "Шапка статьи",
+      "label": "Рубрика",
+      "type": "text",
+      "selector": "[data-edit=\"article-category\"]",
+      "value": "Коллекция SS26"
+    },
+    {
+      "section": "Шапка статьи",
+      "label": "Заголовок",
+      "type": "text",
+      "selector": "[data-edit=\"article-title\"]",
+      "value": "Archivarius"
+    },
+    {
+      "section": "Шапка статьи",
+      "label": "Подзаголовок",
+      "type": "textarea",
+      "selector": "[data-edit=\"article-dek\"]",
+      "value": "Сложный крой, нестандартные силуэты и премиальные материалы без упрощений."
+    },
+    {
+      "section": "Шапка статьи",
+      "label": "Кредит",
+      "type": "textarea",
+      "selector": "[data-edit=\"article-credit\"]",
+      "value": "UNIFORMS"
+    },
+    {
+      "section": "Archivarius / страница 26",
+      "label": "arch-img-1",
+      "type": "image",
+      "selector": "[data-edit=\"arch-img-1\"]",
+      "value": "../assets/named/archivarius-01-logo-embroidery.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Archivarius / страница 26",
+      "label": "arch-img-2",
+      "type": "image",
+      "selector": "[data-edit=\"arch-img-2\"]",
+      "value": "../assets/named/archivarius-05-checked-hood-look.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Archivarius / страница 26",
+      "label": "ARCHIVARIUS",
+      "type": "text",
+      "selector": "[data-edit=\"arch-kicker\"]",
+      "value": "ARCHIVARIUS"
+    },
+    {
+      "section": "Archivarius / страница 26",
+      "label": "Коллекция SS26",
+      "type": "text",
+      "selector": "[data-edit=\"arch-title\"]",
+      "value": "Коллекция SS26"
+    },
+    {
+      "section": "Archivarius / страница 26",
+      "label": "Коллекция SS26 положила начало долгосрочному",
+      "type": "textarea",
+      "selector": "[data-edit=\"arch-p26\"]",
+      "value": "Коллекция SS26 положила начало долгосрочному сотрудничеству с брендом, для которого ключевыми являются точность, конструкция и внимание к деталям."
+    },
+    {
+      "section": "Archivarius / страница 27",
+      "label": "arch-img-3",
+      "type": "image",
+      "selector": "[data-edit=\"arch-img-3\"]",
+      "value": "../assets/named/archivarius-03-brown-jacket.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Archivarius / страница 27",
+      "label": "arch-img-4",
+      "type": "image",
+      "selector": "[data-edit=\"arch-img-4\"]",
+      "value": "../assets/named/archivarius-04-green-jacket.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Archivarius / страница 27",
+      "label": "Коллекция SS26 требовала глубокой проработки",
+      "type": "textarea",
+      "selector": "[data-edit=\"arch-p27\"]",
+      "value": "Коллекция SS26 требовала глубокой проработки модельного ряда: сложный крой, нестандартные силуэты и работа с премиальными материалами не допускали упрощений на этапе производства."
+    },
+    {
+      "section": "Archivarius / страница 28",
+      "label": "arch-img-5",
+      "type": "image",
+      "selector": "[data-edit=\"arch-img-5\"]",
+      "value": "../assets/named/archivarius-02-red-top-black-pants.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Archivarius / страница 28",
+      "label": "arch-img-6",
+      "type": "image",
+      "selector": "[data-edit=\"arch-img-6\"]",
+      "value": "../assets/named/archivarius-06-checked-hooded-vest.jpg",
+      "attr": "src"
+    },
+    {
+      "section": "Archivarius / страница 28",
+      "label": "Основная задача заключалась не только в поши",
+      "type": "textarea",
+      "selector": "[data-edit=\"arch-p28-1\"]",
+      "value": "Основная задача заключалась не только в пошиве тиража, а в том, чтобы сохранить характер изделий на уровне образцов — с той же точностью линий, посадки и обработки."
+    },
+    {
+      "section": "Archivarius / страница 28",
+      "label": "Это один из проектов, в котором особенно ясн",
+      "type": "textarea",
+      "selector": "[data-edit=\"arch-p28-2\"]",
+      "value": "Это один из проектов, в котором особенно ясно видно, насколько важно удерживать качество при переходе от идеи к тиражу."
+    }
+  ]
+}

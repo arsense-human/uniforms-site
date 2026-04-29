@@ -1,0 +1,47 @@
+{
+  "slug": "0310",
+  "category": "classic form",
+  "code": "0310",
+  "title": "Классика 0310",
+  "cardTitle": "Классика 0310",
+  "cardMeta": "форма / костюмная классика",
+  "cardImage": "assets/classic/0310 5п.jpg",
+  "images": [
+    "assets/classic/0310 5п.jpg"
+  ],
+  "kicker": "Производим под заказ",
+  "description": "форма / костюмная классика",
+  "specs": [
+    {
+      "label": "Состав",
+      "value": ""
+    },
+    {
+      "label": "Плотность",
+      "value": ""
+    },
+    {
+      "label": "Размеры",
+      "value": ""
+    },
+    {
+      "label": "Посадка",
+      "value": ""
+    }
+  ],
+  "production": [
+    {
+      "label": "Срок",
+      "value": "от 15 дней"
+    },
+    {
+      "label": "Тираж",
+      "value": "от 50 шт"
+    },
+    {
+      "label": "Кастомизация",
+      "value": "цвет / ткань / брендирование"
+    }
+  ],
+  "related": []
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "0211",
+  "category": "classic form",
+  "code": "0211",
+  "title": "Классика 0211",
+  "cardTitle": "Классика 0211",
+  "cardMeta": "форма / костюмная классика",
+  "cardImage": "assets/classic/0211 5п.jpg",
+  "images": [
+    "assets/classic/0211 5п.jpg"
+  ],
+  "kicker": "Производим под заказ",
+  "description": "форма / костюмная классика",
+  "specs": [
+    {
+      "label": "Состав",
+      "value": ""
+    },
+    {
+      "label": "Плотность",
+      "value": ""
+    },
+    {
+      "label": "Размеры",
+      "value": ""
+    },
+    {
+      "label": "Посадка",
+      "value": ""
+    }
+  ],
+  "production": [
+    {
+      "label": "Срок",
+      "value": "от 15 дней"
+    },
+    {
+      "label": "Тираж",
+      "value": "от 50 шт"
+    },
+    {
+      "label": "Кастомизация",
+      "value": "цвет / ткань / брендирование"
+    }
+  ],
+  "related": []
+}
