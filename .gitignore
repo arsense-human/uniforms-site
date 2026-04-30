@@ -1,0 +1,7 @@
+.DS_Store
+**/.DS_Store
+
+# Local source archives and raw working folders are not part of the published site.
+source-archives/classic/
+source-archives/photos/Photos/*
+assets/КАТАЛОГ UNIFORMS КЛАССИКА24/

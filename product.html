@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>UNIFORMS — Позиция каталога</title>
-    <link rel="stylesheet" href="styles.css?v=home-hero-images-20260429">
+    <link rel="stylesheet" href="styles.css?v=yo-fix-20260430g">
   </head>
   <body data-product-page>
     <header class="site-header" data-header>
@@ -13,25 +13,39 @@
       </a>
       <nav class="main-nav" aria-label="Основная навигация">
         <a href="catalog.html">Каталог</a>
+        <a href="services.html">Услуги</a>
+        <a href="terms.html">Сроки и оплата</a>
         <a href="index.html#cases">Кейсы</a>
         <a href="interview.html">Интервью</a>
-        <a href="index.html#contacts">Контакты</a>
+        <a class="cart-nav-link" href="cart.html">Калькулятор <span data-cart-count>0</span></a>
       </nav>
       <button class="menu-button" type="button" data-menu-toggle aria-label="Открыть меню">Меню</button>
     </header>
     <main class="product-page">
       <p class="product-page-status" data-product-page-status>Загрузка позиции каталога</p>
       <article class="product-page-layout" data-product-page-layout hidden>
-        <section class="product-page-gallery" aria-label="Изображения модели">
-          <div class="product-page-media-list" data-product-page-images></div>
-        </section>
-        <aside class="product-page-info">
+        <aside class="product-page-copy">
           <a class="product-page-back" href="catalog.html">Назад в каталог</a>
           <p class="kicker" data-product-kicker>Производим под заказ</p>
           <h1 data-dialog-title></h1>
           <p class="product-detail-description" data-dialog-detail></p>
+        </aside>
+        <section class="product-page-gallery" aria-label="Изображения модели">
+          <div class="product-page-media-list" data-product-page-images></div>
+        </section>
+        <aside class="product-page-info">
+          <p class="kicker">Параметры заказа</p>
           <dl class="product-detail-specs" data-product-specs></dl>
           <dl class="product-detail-production" data-product-production></dl>
+          <section class="product-palette" data-product-palette-section hidden>
+            <p class="kicker">Палитра</p>
+            <div class="palette-grid" data-product-palette></div>
+          </section>
+          <section class="product-order-builder" aria-label="Собрать позицию">
+            <label>Материал<select data-product-material></select></label>
+            <label>Тираж<input data-product-qty type="number" min="1" step="1" value="50"></label>
+            <button class="product-request-button" type="button" data-add-product-to-cart>Добавить в калькулятор</button>
+          </section>
           <section class="product-pricing" data-product-pricing-section hidden>
             <button class="product-pricing-toggle" type="button" data-product-pricing-toggle>Материалы и цена</button>
             <div class="product-pricing-body" data-product-pricing-body hidden>
@@ -45,7 +59,7 @@
             </div>
           </section>
           <button class="product-measure-button" type="button" data-measurements-open>Замеры изделия</button>
-          <button class="product-request-button" type="button" data-product-request>Собрать запрос</button>
+          <button class="product-request-button" type="button" data-product-request>Собрать запрос без калькулятора</button>
         </aside>
       </article>
     </main>
@@ -78,6 +92,6 @@
         <p class="form-success" data-form-success hidden>Мы свяжемся с вами в течение 1 рабочего дня.</p>
       </form>
     </dialog>
-    <script src="app.js?v=product-pricing-20260429"></script>
+    <script src="app.js?v=yo-fix-20260430g"></script>
   </body>
 </html>

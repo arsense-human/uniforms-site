@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>UNIFORMS — Каталог</title>
-    <link rel="stylesheet" href="styles.css?v=home-hero-images-20260429">
+    <link rel="stylesheet" href="styles.css?v=yo-fix-20260430g">
   </head>
   <body>
     <header class="site-header" data-header>
@@ -13,33 +13,79 @@
       </a>
       <nav class="main-nav" aria-label="Основная навигация">
         <a href="catalog.html">Каталог</a>
+        <a href="services.html">Услуги</a>
+        <a href="terms.html">Сроки и оплата</a>
         <a href="index.html#cases">Кейсы</a>
         <a href="interview.html">Интервью</a>
-        <a href="index.html#contacts">Контакты</a>
+        <a class="cart-nav-link" href="cart.html">Калькулятор <span data-cart-count>0</span></a>
       </nav>
       <button class="menu-button" type="button" data-menu-toggle aria-label="Открыть меню">Меню</button>
     </header>
     <main id="top">
       <section class="catalog-section ssense-catalog" id="catalog" aria-labelledby="catalog-title">
         <div class="catalog-top">
-          <div><p class="kicker">Каталог</p><h2 id="catalog-title">Мерч и форма</h2></div>
+          <div><h2 id="catalog-title">Каталог</h2></div>
           <label class="search-field"><span>Поиск</span><input type="search" data-search placeholder="U2010, худи, 0610"></label>
         </div>
         <div class="filters" aria-label="Фильтры каталога">
           <button class="filter-button is-active" type="button" data-filter="all">Все</button>
-          <button class="filter-button" type="button" data-filter="merch">Мерч</button>
-          <button class="filter-button" type="button" data-filter="classic">Форма</button>
+          <button class="filter-button" type="button" data-filter="upper">Верх</button>
+          <button class="filter-button" type="button" data-filter="lower">Низ</button>
+          <button class="filter-button" type="button" data-filter="mens">Мужское</button>
+          <button class="filter-button" type="button" data-filter="womens">Женское</button>
+          <button class="filter-button" type="button" data-filter="unisex">Унисекс</button>
+          <button class="filter-button" type="button" data-filter="suit">Комплекты</button>
         </div>
-        <h3 class="catalog-subhead" id="merch">Мерч</h3>
+        <nav class="page-jump-nav" aria-label="Разделы каталога">
+          <a href="#merch">Мерч</a>
+          <a href="#classic">Форма</a>
+          <a href="#materials">Материалы</a>
+          <a href="#branding">Брендирование</a>
+          <a href="#accessories">Аксессуары</a>
+          <a href="#packaging">Упаковка</a>
+        </nav>
+        <div class="catalog-anchor" id="merch" aria-hidden="true"></div>
         <div class="product-grid product-grid-ssense" data-product-grid data-category-grid="merch"></div>
-        <h3 class="catalog-subhead" id="classic">Форма</h3>
+        <div class="catalog-anchor" id="classic" aria-hidden="true"></div>
         <div class="product-grid product-grid-ssense" data-product-grid data-category-grid="classic"></div>
+        <section class="offer-catalog-block" id="materials" aria-labelledby="materials-title">
+          <div class="offer-block-head">
+            <p class="kicker">Материалы</p>
+            <h3 id="materials-title">Базовая палитра</h3>
+            <p data-offer-palette-copy></p>
+          </div>
+          <div class="palette-grid palette-grid-large" data-offer-palette></div>
+        </section>
+        <section class="offer-catalog-block" id="branding" aria-labelledby="branding-title">
+          <div class="offer-block-head">
+            <p class="kicker">Брендирование</p>
+            <h3 id="branding-title">Техники нанесения</h3>
+            <p>Техника нанесения подбирается под задачу, материал и тираж.</p>
+          </div>
+          <div class="offer-option-grid" data-offer-section="branding"></div>
+        </section>
+        <section class="offer-catalog-block" id="accessories" aria-labelledby="accessories-title">
+          <div class="offer-block-head">
+            <p class="kicker">Аксессуары</p>
+            <h3 id="accessories-title">Детали, которые собирают образ</h3>
+            <p>Иногда именно детали определяют результат.</p>
+          </div>
+          <div class="offer-option-grid" data-offer-section="accessories"></div>
+        </section>
+        <section class="offer-catalog-block" id="packaging" aria-labelledby="packaging-title">
+          <div class="offer-block-head">
+            <p class="kicker">Упаковка</p>
+            <h3 id="packaging-title">От базового пакета до подарочной коробки</h3>
+            <p>Упаковка влияет на восприятие вещи не меньше, чем сама одежда.</p>
+          </div>
+          <div class="offer-option-grid" data-offer-section="packaging"></div>
+        </section>
       </section>
     </main>
     <footer class="site-footer" id="contacts">
       <div>
         <img class="footer-logo" src="assets/brand/uniforms-logo-full-white.png" alt="UNIFORMS">
-        <p>Если у вас есть задача — давайте соберем ее правильно.</p>
+        <p>Если у вас есть задача — давайте соберём её правильно.</p>
       </div>
       <address>
         <a href="mailto:merch@uniforms.ru">merch@uniforms.ru</a>
@@ -47,6 +93,6 @@
         <span>Кутузовский проспект 36с3, офис 527</span>
       </address>
     </footer>
-    <script src="app.js?v=product-pricing-20260429"></script>
+    <script src="app.js?v=yo-fix-20260430g"></script>
   </body>
 </html>

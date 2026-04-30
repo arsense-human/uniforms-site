@@ -21,7 +21,7 @@ export function ContactForm({ productName, onSuccess }: ContactFormProps) {
     <form
       className="grid gap-4 bg-[#FAFAFA] text-[#111111]"
       onSubmit={handleSubmit}
-      aria-label={productName ? `Заявка на ${productName}` : "Заявка на расчет"}
+      aria-label={productName ? `Заявка на ${productName}` : "Заявка на расчёт"}
     >
       {productName ? <input type="hidden" name="Модель" value={productName} /> : null}
 
