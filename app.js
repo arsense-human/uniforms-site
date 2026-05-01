@@ -431,7 +431,7 @@ function initCookieNotice() {
   const notice = document.createElement("section");
   notice.className = "cookie-notice";
   notice.setAttribute("data-cookie-notice", "");
-  notice.setAttribute("aria-label", "Уведомление о cookies");
+  notice.setAttribute("aria-label", "Уведомление о кукис");
   notice.innerHTML = `
     <p>Сайт использует кукис и локальное хранилище для работы калькулятора и сохранения выбранных настроек.</p>
     <a href="${root}cookies.html">Правила кукис</a>
