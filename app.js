@@ -56,31 +56,6 @@ const hangingPrepositionPattern = new RegExp(
   "giu"
 );
 
-const wordStart = "(^|[^\\p{L}\\p{N}_])";
-const wordEnd = "(?=$|[^\\p{L}\\p{N}_])";
-const obviousYoReplacements = [
-  [new RegExp(`${wordStart}расчет(а|ам|ами|ах|е|ом|у|ы|)${wordEnd}`, "giu"), "расчёт"],
-  [new RegExp(`${wordStart}просчет(а|ам|ами|ах|е|ом|у|ы|)${wordEnd}`, "giu"), "просчёт"],
-  [new RegExp(`${wordStart}счет(а|ам|ами|ах|е|ом|у|ы|)${wordEnd}`, "giu"), "счёт"],
-  [new RegExp(`${wordStart}объем(а|ам|ами|ах|е|ом|у|ы|н|ная|ное|ной|ные|ный|ных|ными|)${wordEnd}`, "giu"), "объём"],
-  [new RegExp(`${wordStart}соберем()${wordEnd}`, "giu"), "соберём"],
-  [new RegExp(`${wordStart}живет()${wordEnd}`, "giu"), "живёт"],
-  [new RegExp(`${wordStart}несет()${wordEnd}`, "giu"), "несёт"],
-  [new RegExp(`${wordStart}ведет()${wordEnd}`, "giu"), "ведёт"],
-  [new RegExp(`${wordStart}дойдет()${wordEnd}`, "giu"), "дойдёт"],
-  [new RegExp(`${wordStart}съемк(а|е|и|ой|у|)${wordEnd}`, "giu"), "съёмк"],
-  [new RegExp(`${wordStart}застежк(а|е|и|ой|у|)${wordEnd}`, "giu"), "застёжк"],
-  [new RegExp(`${wordStart}утепленн(ая|ое|ой|ую|ые|ый|ых|ыми|)${wordEnd}`, "giu"), "утеплённ"],
-  [new RegExp(`${wordStart}жестк(ая|ое|ой|ую|ие|ий|их|ими|)${wordEnd}`, "giu"), "жёстк"],
-  [new RegExp(`${wordStart}шелк(а|е|ом|у|)${wordEnd}`, "giu"), "шёлк"],
-  [new RegExp(`${wordStart}шелков(ая|ое|ой|ую|ые|ый|ых|ыми|)${wordEnd}`, "giu"), "шёлков"],
-  [new RegExp(`${wordStart}черн(ая|ое|ой|ую|ые|ый|ых|ыми|)${wordEnd}`, "giu"), "чёрн"],
-];
-
-function preserveInitialCase(source = "", replacement = "") {
-  return /^[А-ЯЁA-Z]/.test(source) ? replacement.charAt(0).toUpperCase() + replacement.slice(1) : replacement;
-}
-
 function normalizeYo(text = "") {
   return String(text).normalize("NFC").replace(/ё/g, "е").replace(/Ё/g, "Е");
 }
@@ -312,6 +287,14 @@ const cookieConsentStorageKey = "uniformsCookieConsent20260501";
 const contactEmail = "zakaz@uniforms.ru";
 let offerData = null;
 
+const baseIncludedOptionIds = [
+  ["preproduction", "material-map"],
+  ["branding", "care-label"],
+  ["packaging", "zip-basic"],
+];
+
+const weightOptionPattern = /(?:dye|wash)-(\d+)$/;
+
 const paletteSwatches = [
   "#111111", "#f2f0e8", "#8e9a74", "#c96f3e", "#5c5878", "#d9d4bf",
   "#843a2d", "#f1f1ef", "#4d2a20", "#587078", "#d6ce51", "#5d2436",
@@ -456,6 +439,19 @@ function updateCartItem(cartId, updates = {}) {
   renderCartPage();
 }
 
+function updateProductAndCleanOptions(cartId, updates = {}) {
+  let nextProduct = null;
+  const updatedCart = getCart()
+    .map((item) => {
+      if (item.cartId !== cartId) return item;
+      nextProduct = { ...item, ...updates };
+      return nextProduct;
+    })
+    .filter((item) => item.type !== "option" || item.appliesTo !== cartId || optionApplicableToProduct(item, nextProduct || {}));
+  saveCart(updatedCart);
+  renderCartPage();
+}
+
 function removeCartItem(cartId) {
   saveCart(getCart().filter((item) => item.cartId !== cartId));
   renderCartPage();
@@ -467,6 +463,53 @@ function optionCost(item, baseUnitPrice = 0) {
   if (item.priceType === "sampleMultiplier") return baseUnitPrice * Number(item.multiplier || 1);
   if (item.priceType === "unitMultiplier") return baseUnitPrice * Number(item.multiplier || 1) * qty;
   return Number(item.price || item.unitPrice || 0) * qty;
+}
+
+function productWeightCategory(item = {}) {
+  if (item.weightCategory) return String(item.weightCategory);
+  if (item.calculator?.weightCategory) return String(item.calculator.weightCategory);
+  const title = `${item.title || ""} ${item.slug || ""}`.toLowerCase();
+  if (/футболк|лонгслив|рубашк|сорочк|блузк/.test(title)) return "350";
+  if (/ветровк|пиджак|жакет|костюм/.test(title)) return "1000";
+  return "700";
+}
+
+function isClassicProduct(item = {}) {
+  return String(item.category || item.cardMeta || item.slug || "").includes("classic") || /^(?:\d|k\d)/.test(String(item.slug || ""));
+}
+
+function productBlocksWashing(item = {}) {
+  const materialText = `${item.material || ""} ${item.composition || ""}`.toLowerCase();
+  if (item.washingAllowed === false || item.calculator?.washingAllowed === false) return true;
+  return isClassicProduct(item) || /плащевк|нейлон/.test(materialText);
+}
+
+function optionWeightCategory(option = {}) {
+  return String(option.id || "").match(weightOptionPattern)?.[1] || "";
+}
+
+function optionApplicableToProduct(option = {}, product = {}) {
+  if (option.section === "washing" && productBlocksWashing(product)) return false;
+  if (option.section === "dyeing" && (product.dyeingAllowed === false || product.calculator?.dyeingAllowed === false)) return false;
+  const requiredWeight = optionWeightCategory(option);
+  if (requiredWeight) return requiredWeight === productWeightCategory(product);
+  return true;
+}
+
+function optionDefaultQty(option = {}, product = {}) {
+  if (option.priceType === "unitMultiplier") return 1;
+  if (option.priceType === "fixed" || option.priceType === "sampleMultiplier") return 1;
+  return Math.max(Number(product.qty || 1), Number(option.minRun || 1));
+}
+
+function optionQtyLabel(option = {}) {
+  if (option.id === "size-run-sample") return "Размеров";
+  if (option.priceType === "unitMultiplier") return "Единиц";
+  return "Количество";
+}
+
+function isOptionQtyEditable(option = {}) {
+  return option.priceType === "unitMultiplier";
 }
 
 function parseMinRun(value, fallback = 1) {
@@ -702,6 +745,7 @@ function selectedProductLine() {
   return {
     type: "product",
     slug: activeProduct.slug,
+    category: activeProduct.category || "",
     title: activeProduct.title,
     material: selected.material || "",
     composition: selected.composition || "",
@@ -718,6 +762,10 @@ function selectedProductLine() {
       price: item.price || tierLabel(item),
       tiers: Array.isArray(item.tiers) ? item.tiers : [],
     })),
+    calculator: activeProduct.calculator || {},
+    weightCategory: activeProduct.calculator?.weightCategory || activeProduct.weightCategory || "",
+    washingAllowed: activeProduct.calculator?.washingAllowed ?? activeProduct.washingAllowed,
+    dyeingAllowed: activeProduct.calculator?.dyeingAllowed ?? activeProduct.dyeingAllowed,
     attachedOptions: [],
   };
 }
@@ -911,7 +959,8 @@ function createOfferOptionCard(item, section) {
   const article = document.createElement("article");
   article.className = "offer-option-card";
   const minRun = item.minRunLabel || (item.minRun ? `от ${item.minRun} ед.` : "");
-  const isRequiredStage = section === "preproduction" && ["material-map", "sample"].includes(item.id);
+  const isBaseIncluded = baseIncludedOptionIds.some(([baseSection, id]) => baseSection === section && id === item.id);
+  const isRequiredStage = (section === "preproduction" && ["material-map", "sample"].includes(item.id)) || isBaseIncluded;
   article.innerHTML = `
     <div>
       <p class="kicker">${protectHangingPrepositions(minRun || section)}</p>
@@ -936,7 +985,7 @@ function createOfferOptionCard(item, section) {
       price: Number(item.price || 0),
       unitPrice: Number(item.price || 0),
       multiplier: Number(item.multiplier || 0),
-      qty: Number(item.minRun || 1),
+      qty: optionDefaultQty(item),
       minRun: Number(item.minRun || 1),
       note: item.note || "",
       appliesTo: "",
@@ -991,9 +1040,10 @@ function cartItemTotal(item, cart = getCart()) {
   if (item.type !== "option") return optionCost(item, Number(item.unitPrice || item.price || 0));
   const targetProduct = optionTargetProduct(item, cart);
   const baseUnitPrice = targetProduct ? Number(targetProduct.unitPrice || 0) : Number(item.unitPrice || item.price || 0);
-  const qty = targetProduct
-    ? Math.max(Number(targetProduct.qty || 1), Number(item.minRun || 1))
-    : Number(item.qty || item.minRun || 1);
+  const qty =
+    targetProduct && item.priceType !== "unitMultiplier" && item.priceType !== "fixed" && item.priceType !== "sampleMultiplier"
+      ? Math.max(Number(targetProduct.qty || 1), Number(item.minRun || 1))
+      : Number(item.qty || 1);
   return optionCost({ ...item, qty }, baseUnitPrice);
 }
 
@@ -1008,6 +1058,9 @@ function normalizeProductPrice(item) {
     qty,
     unitPrice: unitPriceForQty(selected, qty),
     note: tierLabel(selected),
+    washingAllowed: item.calculator?.washingAllowed ?? item.washingAllowed,
+    dyeingAllowed: item.calculator?.dyeingAllowed ?? item.dyeingAllowed,
+    weightCategory: item.calculator?.weightCategory || item.weightCategory,
   };
 }
 
@@ -1025,6 +1078,10 @@ function labelForSection(section = "") {
 
 function productOptions(cartId, cart) {
   return cart.filter((item) => item.type === "option" && item.appliesTo === cartId);
+}
+
+function productsForOption(option = {}, productsList = []) {
+  return productsList.filter((product) => optionApplicableToProduct(option, product));
 }
 
 function allOfferOptions(offer = {}) {
@@ -1045,8 +1102,37 @@ function allOfferOptions(offer = {}) {
   );
 }
 
+function baseIncludedOptions(offer = {}) {
+  const options = allOfferOptions(offer);
+  return baseIncludedOptionIds
+    .map(([section, id]) => options.find((item) => item.section === section && item.id === id))
+    .filter(Boolean);
+}
+
+function includedOptionsMarkup(offer = {}) {
+  const items = baseIncludedOptions(offer);
+  if (!items.length) return "";
+  return `
+    <div class="cart-included-options">
+      <p>Базово включено</p>
+      ${items
+        .map(
+          (item) => `
+            <div class="cart-included-option">
+              <span>${protectHangingPrepositions(labelForSection(item.section))}</span>
+              <strong>${protectHangingPrepositions(item.title || "")}</strong>
+              <small>${protectHangingPrepositions(item.note || "Бесплатно")}</small>
+            </div>
+          `
+        )
+        .join("")}
+      <em>При замене выберите платную альтернативу в поле «Добавить услугу».</em>
+    </div>
+  `;
+}
+
 function addOptionToProduct(productItem, option) {
-  const productQty = Math.max(Number(productItem.qty || 1), Number(option.minRun || 1));
+  const qty = optionDefaultQty(option, productItem);
   addCartItem({
     type: "option",
     section: option.section,
@@ -1057,7 +1143,7 @@ function addOptionToProduct(productItem, option) {
     price: Number(option.price || 0),
     unitPrice: Number(option.price || 0),
     multiplier: Number(option.multiplier || 0),
-    qty: productQty,
+    qty,
     minRun: Number(option.minRun || 1),
     note: option.note || "",
     appliesTo: productItem.cartId,
@@ -1065,7 +1151,10 @@ function addOptionToProduct(productItem, option) {
 }
 
 function optionSelectMarkup(productItem, offer) {
-  const options = allOfferOptions(offer).filter((item) => item.id !== "sample" && item.id !== "material-map");
+  const options = allOfferOptions(offer)
+    .filter((item) => item.id !== "sample" && item.id !== "material-map")
+    .filter((item) => !(item.priceType === "perUnit" && Number(item.price || 0) === 0))
+    .filter((item) => optionApplicableToProduct(item, productItem));
   if (!options.length) return "";
   return `
     <label class="cart-inline-select">
@@ -1079,6 +1168,16 @@ function optionSelectMarkup(productItem, offer) {
           )
           .join("")}
       </select>
+    </label>
+  `;
+}
+
+function optionQuantityMarkup(option = {}) {
+  if (!isOptionQtyEditable(option)) return "";
+  return `
+    <label class="cart-option-qty">
+      ${optionQtyLabel(option)}
+      <input type="number" min="1" step="1" value="${Math.max(1, Number(option.qty || 1))}" data-attached-option-qty="${option.cartId}">
     </label>
   `;
 }
@@ -1131,6 +1230,7 @@ async function renderCartPage() {
           </label>
           ${optionSelectMarkup(item, offer)}
         </div>
+        ${includedOptionsMarkup(offer)}
         <div class="cart-attached-options" data-attached-options="${item.cartId}"></div>
       </div>
       <div class="cart-line-actions">
@@ -1143,13 +1243,13 @@ async function renderCartPage() {
     article.querySelector("[data-cart-qty]")?.addEventListener("change", (event) => {
       const minRun = Number(item.minRun || 1);
       const qty = Math.max(minRun, Number(event.target.value || minRun));
-      updateCartItem(item.cartId, normalizeProductPrice({ ...item, qty }));
+      updateProductAndCleanOptions(item.cartId, normalizeProductPrice({ ...item, qty }));
     });
     article.querySelector("[data-cart-material]")?.addEventListener("change", (event) => {
       const selected = item.priceOptions?.[Number(event.target.value)] || {};
       const minRun = parseMinRun(selected.minRun, item.minRun || 1);
       const qty = Math.max(minRun, Number(item.qty || minRun));
-      updateCartItem(item.cartId, {
+      updateProductAndCleanOptions(item.cartId, {
         material: selected.material || "",
         composition: selected.composition || "",
         unitPrice: unitPriceForQty(selected, qty),
@@ -1170,7 +1270,7 @@ async function renderCartPage() {
     productOptions(item.cartId, cart).forEach((option) => {
       const optionRow = document.createElement("div");
       optionRow.className = "cart-attached-option";
-      const targetOptions = productLines
+      const targetOptions = productsForOption(option, productLines)
         .map(
           (product) =>
             `<option value="${product.cartId}"${product.cartId === option.appliesTo ? " selected" : ""}>${protectHangingPrepositions(product.title || "")}</option>`
@@ -1180,6 +1280,7 @@ async function renderCartPage() {
         <span>${protectHangingPrepositions(labelForSection(option.section))}</span>
         <strong>${protectHangingPrepositions(option.title || "")}</strong>
         <small>${protectHangingPrepositions(option.note || "")}</small>
+        ${optionQuantityMarkup(option)}
         <em>${formatMoney(cartItemTotal(option, cart))}</em>
         <select data-attached-option-target="${option.cartId}">
           <option value="">Отдельно</option>
@@ -1190,6 +1291,9 @@ async function renderCartPage() {
       optionRow.querySelector("[data-attached-option-target]")?.addEventListener("change", (event) => {
         updateCartItem(option.cartId, { appliesTo: event.target.value });
       });
+      optionRow.querySelector("[data-attached-option-qty]")?.addEventListener("change", (event) => {
+        updateCartItem(option.cartId, { qty: Math.max(1, Number(event.target.value || 1)) });
+      });
       optionRow.querySelector("button")?.addEventListener("click", () => removeCartItem(option.cartId));
       attachedRoot?.appendChild(optionRow);
     });
@@ -1197,7 +1301,7 @@ async function renderCartPage() {
   looseOptions.forEach((item) => {
     const article = document.createElement("article");
     article.className = "cart-line cart-option-line";
-    const targetOptions = productLines
+    const targetOptions = productsForOption(item, productLines)
       .map((product) => `<option value="${product.cartId}">${protectHangingPrepositions(product.title || "")}</option>`)
       .join("");
     article.innerHTML = `
@@ -1205,6 +1309,7 @@ async function renderCartPage() {
         <p class="kicker">${protectHangingPrepositions(labelForSection(item.section))}</p>
         <h3>${protectHangingPrepositions(item.title || "")}</h3>
         <p>${protectHangingPrepositions(item.note || item.description || "")}</p>
+        ${optionQuantityMarkup(item)}
         <label class="cart-inline-select">
           Применить к
           <select data-cart-option-target="${item.cartId}">
@@ -1223,6 +1328,9 @@ async function renderCartPage() {
     article.querySelector("[data-cart-option-target]")?.addEventListener("change", (event) => {
       updateCartItem(item.cartId, { appliesTo: event.target.value });
     });
+    article.querySelector("[data-attached-option-qty]")?.addEventListener("change", (event) => {
+      updateCartItem(item.cartId, { qty: Math.max(1, Number(event.target.value || 1)) });
+    });
     root.appendChild(article);
   });
   const productBase = productLines.reduce((sum, item) => sum + cartItemTotal(item, cart), 0);
@@ -1235,20 +1343,19 @@ async function renderCartPage() {
       <div><dt>Изделия</dt><dd>${formatMoney(productBase)}</dd></div>
       <div><dt>Предтиражные образцы</dt><dd>${formatMoney(sampleTotal)}</dd></div>
       <div><dt>Опции и услуги</dt><dd>${formatMoney(optionTotal)}</dd></div>
-      <div><dt>Предварительный итог</dt><dd>${formatMoney(total)}</dd></div>
+      <div><dt>Итог</dt><dd>${formatMoney(total)}</dd></div>
     </dl>
-    <p class="cart-stage-note">В расчёт автоматически добавлен обязательный предтиражный образец: стоимость за единицу в партии + 100%. Карта образцов материалов учитывается как бесплатный этап.</p>
-    <p class="cart-disclaimer">Это предварительный расчёт для ориентира. Итоговая стоимость не является счётом на оплату и подтверждается только после просчёта проекта: цена может измениться в зависимости от модели, материалов, тиража, брендирования, упаковки, сроков и других параметров запроса.</p>
+    <p class="cart-stage-note">В расчет автоматически добавлен обязательный предтиражный образец: стоимость за единицу в партии + 100%. Карта образцов материалов учитывается как бесплатный этап.</p>
   `;
   if (payload) {
     payload.value = [
       ...productLines.map((item) => {
         const attached = productOptions(item.cartId, cart)
-          .map((option) => `  + ${labelForSection(option.section)}: ${option.title} (${option.note || ""})`)
+          .map((option) => `  + ${labelForSection(option.section)}: ${option.title} (${option.note || ""}${isOptionQtyEditable(option) ? `, ${optionQtyLabel(option).toLowerCase()}: ${option.qty || 1}` : ""})`)
           .join("\\n");
         return `${item.title} — ${item.qty || 1} ед. — ${item.material || item.note || ""}${attached ? `\\n${attached}` : ""}`;
       }),
-      ...looseOptions.map((item) => `${labelForSection(item.section)}: ${item.title} — ${item.note || ""}`),
+      ...looseOptions.map((item) => `${labelForSection(item.section)}: ${item.title} — ${item.note || ""}${isOptionQtyEditable(item) ? ` — ${optionQtyLabel(item).toLowerCase()}: ${item.qty || 1}` : ""}`),
     ].join("\\n");
   }
   protectTextNodes(root);

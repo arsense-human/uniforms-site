@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>UNIFORMS — Калькулятор заказа</title>
-    <link rel="stylesheet" href="styles.css?v=tech-pages-20260501d">
+    <link rel="stylesheet" href="styles.css?v=calculator-logic-20260501e">
+    <link rel="stylesheet" href="layout-overrides.css?v=calculator-logic-20260501e">
   </head>
   <body>
     <header class="site-header" data-header>
@@ -24,19 +25,20 @@
       <section class="info-hero cart-hero">
         <p class="kicker">Калькулятор</p>
         <h1>Расчет заказа</h1>
-        <p>Соберите изделия, материалы, услуги и упаковку, чтобы получить ориентир перед финальным просчётом.</p>
+        <p>Соберите изделия, материалы, услуги и упаковку, чтобы получить ориентир перед финальным просчетом.</p>
       </section>
       <section class="cart-workspace">
         <div class="cart-list" data-cart-items></div>
         <aside class="cart-summary">
-          <h2>Предварительный итог</h2>
+          <h2>Итог</h2>
           <div data-cart-summary></div>
           <form class="b2b-contact-form cart-form" action="mailto:zakaz@uniforms.ru" method="post" enctype="text/plain" data-contact-form data-cart-form>
             <input type="hidden" name="Состав заказа" data-cart-payload>
             <label>Имя<input name="Имя" type="text" autocomplete="name"></label>
             <label>Контакт<input name="Контакт" type="text" autocomplete="email"></label>
             <label>Комментарий<textarea name="Комментарий" rows="5"></textarea></label>
-            <button class="text-submit" type="submit">Отправить запрос на просчёт</button>
+            <button class="text-submit" type="submit">Отправить запрос на просчет</button>
+            <p class="cart-disclaimer cart-form-disclaimer">Это предварительный расчет для ориентира. Итоговая стоимость не является счетом на оплату и подтверждается только после просчета проекта: цена может измениться в зависимости от модели, материалов, тиража, брендирования, упаковки, сроков и других параметров запроса.</p>
             <p class="form-success" data-form-success hidden>Мы свяжемся с вами в течение 1 рабочего дня.</p>
           </form>
         </aside>
@@ -53,6 +55,6 @@
         <span>Кутузовский проспект 36с3, офис 527</span>
       </address>
     </footer>
-    <script src="app.js?v=tech-pages-20260501d"></script>
+    <script src="app.js?v=calculator-logic-20260501e"></script>
   </body>
 </html>

@@ -118,5 +118,10 @@
     "ГРАФИТ",
     "ТЁМНО-КОРИЧНЕВЫЙ"
   ],
-  "related": []
+  "related": [],
+  "calculator": {
+    "weightCategory": "1000",
+    "dyeingAllowed": true,
+    "washingAllowed": false
+  }
 }

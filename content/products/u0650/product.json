@@ -81,5 +81,10 @@
     "19-02",
     "20-01",
     "07-01"
-  ]
+  ],
+  "calculator": {
+    "weightCategory": "1000",
+    "dyeingAllowed": true,
+    "washingAllowed": false
+  }
 }

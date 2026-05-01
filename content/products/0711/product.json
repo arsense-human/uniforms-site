@@ -118,5 +118,10 @@
     "НЭВИ",
     "ГРАФИТ",
     "ТЁМНО-КОРИЧНЕВЫЙ"
-  ]
+  ],
+  "calculator": {
+    "weightCategory": "700",
+    "dyeingAllowed": true,
+    "washingAllowed": false
+  }
 }
