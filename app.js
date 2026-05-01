@@ -308,6 +308,8 @@ let activeProductImageIndex = 0;
 
 const productDirectory = "content/products/";
 const cartStorageKey = "uniformsRequestCart";
+const cookieConsentStorageKey = "uniformsCookieConsent20260501";
+const contactEmail = "zakaz@uniforms.ru";
 let offerData = null;
 
 const paletteSwatches = [
@@ -357,10 +359,88 @@ function saveCart(items) {
   updateCartCount();
 }
 
+function siteRootPath() {
+  if (document.body.dataset.contentRoot !== undefined) return document.body.dataset.contentRoot;
+  return window.location.pathname.includes("/cases/") ? "../" : "";
+}
+
+function ensureMobileCartLink() {
+  if (document.querySelector("[data-mobile-cart-link]")) return;
+
+  const link = document.createElement("a");
+  link.className = "mobile-cart-link";
+  link.href = `${siteRootPath()}cart.html`;
+  link.setAttribute("data-mobile-cart-link", "");
+  link.innerHTML = `Калькулятор <span data-cart-count>0</span>`;
+  document.body.appendChild(link);
+}
+
 function updateCartCount() {
   const count = getCart().reduce((sum, item) => sum + Number(item.qty || 0), 0);
   document.querySelectorAll("[data-cart-count]").forEach((node) => {
     node.textContent = String(count);
+    node.classList.toggle("is-filled", count > 0);
+    node.closest(".cart-nav-link, .mobile-cart-link")?.classList.toggle("has-items", count > 0);
+  });
+}
+
+function renderSiteFooter() {
+  let footer = document.querySelector(".site-footer");
+  if (!footer) {
+    footer = document.createElement("footer");
+    footer.className = "site-footer";
+    footer.id = "contacts";
+    const insertionPoint = document.querySelector("dialog, script");
+    document.body.insertBefore(footer, insertionPoint || null);
+  }
+
+  const root = siteRootPath();
+  const year = new Date().getFullYear();
+  footer.innerHTML = `
+    <div class="footer-brand-block">
+      <img class="footer-logo" src="${root}assets/brand/uniforms-logo-full-white.png" alt="UNIFORMS">
+      <p>Если у вас есть задача — давайте соберем ее правильно.</p>
+    </div>
+    <nav class="footer-nav" aria-label="Разделы сайта">
+      <a href="${root}terms.html">Сроки и оплата</a>
+      <a href="${root}privacy.html">Политика конфиденциальности</a>
+      <a href="${root}offer.html">Публичная оферта</a>
+      <a href="${root}measurements.html">Как снять мерки</a>
+      <a href="${root}articles.html">Архив статей</a>
+      <a href="${root}vacancies.html">Вакансии</a>
+      <a href="${root}cookies.html">Правила кукис</a>
+    </nav>
+    <address class="footer-contacts">
+      <a href="mailto:${contactEmail}">${contactEmail}</a>
+      <a href="tel:+79778890318">+7 977 889 03 18</a>
+      <span>Кутузовский проспект 36с3, офис 527</span>
+    </address>
+    <p class="footer-copy">© ${year} UNIFORMS</p>
+  `;
+}
+
+function initCookieNotice() {
+  try {
+    if (localStorage.getItem(cookieConsentStorageKey) === "accepted") return;
+  } catch (error) {
+    return;
+  }
+
+  if (document.querySelector("[data-cookie-notice]")) return;
+  const root = siteRootPath();
+  const notice = document.createElement("section");
+  notice.className = "cookie-notice";
+  notice.setAttribute("data-cookie-notice", "");
+  notice.setAttribute("aria-label", "Уведомление о cookies");
+  notice.innerHTML = `
+    <p>Сайт использует кукис и локальное хранилище для работы калькулятора и сохранения выбранных настроек.</p>
+    <a href="${root}cookies.html">Правила кукис</a>
+    <button type="button" data-cookie-accept>Принять</button>
+  `;
+  document.body.appendChild(notice);
+  notice.querySelector("[data-cookie-accept]")?.addEventListener("click", () => {
+    localStorage.setItem(cookieConsentStorageKey, "accepted");
+    notice.remove();
   });
 }
 
@@ -1259,6 +1339,9 @@ function attachInterviewLookCaptions() {
 }
 
 contentReady.finally(() => {
+  renderSiteFooter();
+  initCookieNotice();
+  ensureMobileCartLink();
   attachInterviewLookCaptions();
   updateCartCount();
   renderOfferSections();

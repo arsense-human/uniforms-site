@@ -396,6 +396,11 @@ body[data-content-page="home"] .clients-section h2 {
   justify-content: center;
 }
 
+.cart-nav-link span.is-filled,
+.mobile-cart-link span.is-filled {
+  color: #c1121f;
+}
+
 .product-card-price {
   display: block;
   padding: 2px 0 0;
@@ -507,6 +512,65 @@ body[data-content-page="home"] .clients-section h2 {
   font-family: var(--font-serif);
   font-size: clamp(22px, 2vw, 34px);
   line-height: 1.06;
+}
+
+.legal-section,
+.article-index {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.2fr) minmax(0, 0.8fr);
+  gap: clamp(18px, 3vw, 58px);
+  padding: clamp(28px, 4vw, 62px) 0;
+  border-top: 1px solid var(--line);
+}
+
+.legal-section h2 {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: clamp(18px, 1.4vw, 26px);
+  font-weight: 400;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.legal-section p {
+  max-width: 760px;
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 2vw, 34px);
+  line-height: 1.08;
+}
+
+.legal-section a {
+  border-bottom: 1px solid currentColor;
+}
+
+.article-index {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.article-index a {
+  display: grid;
+  gap: 12px;
+  min-height: 220px;
+  align-content: end;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.article-index span {
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.article-index strong {
+  max-width: 560px;
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 4vw, 64px);
+  font-weight: 400;
+  line-height: 0.98;
 }
 
 .offer-block-head {
@@ -873,6 +937,7 @@ body[data-content-page="home"] .clients-section h2 {
   .info-hero,
   .offer-block-head,
   .cart-workspace,
+  .legal-section,
   .terms-row {
     grid-template-columns: 1fr;
   }
@@ -884,6 +949,10 @@ body[data-content-page="home"] .clients-section h2 {
 
   .cart-summary {
     position: static;
+  }
+
+  .article-index {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1982,14 +2051,14 @@ h3 {
 
 .site-footer {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 24px;
-  padding: 30px 34px;
+  grid-template-columns: minmax(220px, 0.9fr) minmax(180px, 0.7fr) minmax(220px, auto);
+  gap: 28px;
+  padding: 34px;
   background: var(--ink);
   color: var(--paper);
 }
 
-.site-footer p {
+.footer-brand-block p {
   max-width: 420px;
   margin: 18px 0 0;
   font-family: var(--font-serif);
@@ -1997,12 +2066,85 @@ h3 {
   line-height: 1;
 }
 
-address {
+.footer-nav {
+  display: grid;
+  gap: 7px;
+  align-content: start;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.footer-nav a,
+.footer-contacts a {
+  color: inherit;
+}
+
+.footer-nav a:hover,
+.footer-contacts a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+address,
+.footer-contacts {
   display: grid;
   gap: 8px;
   align-content: end;
   font-style: normal;
   text-align: right;
+}
+
+.footer-copy {
+  grid-column: 1 / -1;
+  margin: 10px 0 0;
+  color: rgba(250, 250, 250, 0.62);
+  font-family: var(--font-sans);
+  font-size: 10px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.mobile-cart-link {
+  display: none;
+}
+
+.cookie-notice {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 40;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 16px;
+  align-items: center;
+  width: min(720px, calc(100vw - 36px));
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.cookie-notice p {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.cookie-notice a,
+.cookie-notice button {
+  padding: 0 0 2px;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 11px;
+  line-height: 1.2;
+  text-transform: uppercase;
 }
 
 .product-dialog {
@@ -2332,8 +2474,45 @@ address {
     grid-template-columns: 1fr;
   }
 
-address {
-  text-align: left;
+  address,
+  .footer-contacts {
+    text-align: left;
+  }
+
+  .footer-copy {
+    margin-top: 6px;
+  }
+
+  .mobile-cart-link {
+    position: fixed;
+    top: 9px;
+    right: 82px;
+    z-index: 35;
+    display: none;
+    gap: 6px;
+    align-items: center;
+    padding: 7px 9px 6px;
+    border: 1px solid var(--line);
+    background: rgba(250, 250, 250, 0.94);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 10px;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .mobile-cart-link.has-items {
+    display: inline-flex;
+  }
+
+  .cookie-notice {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: auto;
+    padding: 12px 14px;
   }
 }
 
