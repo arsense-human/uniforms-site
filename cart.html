@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>UNIFORMS — Калькулятор заказа</title>
-    <link rel="stylesheet" href="styles.css?v=calculator-logic-20260501e">
-    <link rel="stylesheet" href="layout-overrides.css?v=calculator-logic-20260501e">
-  </head>
+    <link rel="stylesheet" href="styles.css?v=desktop-gaps-100-20260508">
+    <link rel="stylesheet" href="layout-overrides.css?v=desktop-gaps-100-20260508">
+  <link rel="stylesheet" href="header-overrides.css?v=desktop-gaps-100-20260508">
+</head>
   <body>
     <header class="site-header" data-header>
       <a class="brand" href="index.html#top" aria-label="UNIFORMS">
@@ -15,7 +16,7 @@
       <nav class="main-nav" aria-label="Основная навигация">
         <a href="catalog.html">Каталог</a>
         <a href="services.html">Услуги</a>
-        <a href="index.html#cases">Кейсы</a>
+        <a href="cases.html">Статьи</a>
         <a href="interview.html">Интервью</a>
         <a class="cart-nav-link" href="cart.html">Калькулятор <span data-cart-count>0</span></a>
       </nav>
@@ -24,8 +25,8 @@
     <main id="top" class="cart-page">
       <section class="info-hero cart-hero">
         <p class="kicker">Калькулятор</p>
-        <h1>Расчет заказа</h1>
-        <p>Соберите изделия, материалы, услуги и упаковку, чтобы получить ориентир перед финальным просчетом.</p>
+        <h1>Расчёт заказа</h1>
+        <p>Соберите изделия, материалы, услуги и упаковку, чтобы обсудить проект с понятным ориентиром.</p>
       </section>
       <section class="cart-workspace">
         <div class="cart-list" data-cart-items></div>
@@ -37,8 +38,8 @@
             <label>Имя<input name="Имя" type="text" autocomplete="name"></label>
             <label>Контакт<input name="Контакт" type="text" autocomplete="email"></label>
             <label>Комментарий<textarea name="Комментарий" rows="5"></textarea></label>
-            <button class="text-submit" type="submit">Отправить запрос на просчет</button>
-            <p class="cart-disclaimer cart-form-disclaimer">Это предварительный расчет для ориентира. Итоговая стоимость не является счетом на оплату и подтверждается только после просчета проекта: цена может измениться в зависимости от модели, материалов, тиража, брендирования, упаковки, сроков и других параметров запроса.</p>
+            <button class="text-submit" type="submit">Обсудить этот расчёт</button>
+            <p class="cart-disclaimer cart-form-disclaimer">Это предварительный ориентир. Финальный расчёт зависит от деталей проекта, сроков, материалов и производства.</p>
             <p class="form-success" data-form-success hidden>Мы свяжемся с вами в течение 1 рабочего дня.</p>
           </form>
         </aside>
@@ -47,7 +48,7 @@
     <footer class="site-footer" id="contacts">
       <div>
         <img class="footer-logo" src="assets/brand/uniforms-logo-full-white.png" alt="UNIFORMS">
-        <p>Если у вас есть задача — давайте соберем ее правильно.</p>
+        <p>Если у вас есть проект — обсудим формат, тираж и сроки.</p>
       </div>
       <address>
         <a href="mailto:zakaz@uniforms.ru">zakaz@uniforms.ru</a>
@@ -55,6 +56,6 @@
         <span>Кутузовский проспект 36с3, офис 527</span>
       </address>
     </footer>
-    <script src="app.js?v=calculator-logic-20260501e"></script>
+    <script src="app.js?v=desktop-gaps-100-20260508"></script>
   </body>
 </html>

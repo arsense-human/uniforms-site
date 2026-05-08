@@ -1,5 +1,7 @@
 const menuButton = document.querySelector("[data-menu-toggle]");
 const nav = document.querySelector(".main-nav");
+const header = document.querySelector("[data-header]");
+const contentBuildVersion = "desktop-gaps-100-20260508";
 const hangingPrepositions = [
   "перед",
   "через",
@@ -57,7 +59,7 @@ const hangingPrepositionPattern = new RegExp(
 );
 
 function normalizeYo(text = "") {
-  return String(text).normalize("NFC").replace(/ё/g, "е").replace(/Ё/g, "Е");
+  return String(text).normalize("NFC");
 }
 
 function protectHangingPrepositions(text = "") {
@@ -186,7 +188,7 @@ async function loadEditableContent() {
   const root = document.body.dataset.contentRoot || "";
 
   try {
-    const response = await fetch(`${root}content/${page}.json`, { cache: "no-store" });
+    const response = await fetch(`${root}content/${page}.json?v=${contentBuildVersion}`, { cache: "no-store" });
     if (!response.ok) return;
     const content = await response.json();
 
@@ -210,8 +212,12 @@ async function loadEditableContent() {
 const contentReady = loadEditableContent();
 
 if (menuButton && nav) {
+  menuButton.setAttribute("aria-expanded", "false");
   menuButton.addEventListener("click", () => {
-    nav.classList.toggle("is-open");
+    const isOpen = nav.classList.toggle("is-open");
+    header?.classList.toggle("is-menu-open", isOpen);
+    menuButton.setAttribute("aria-expanded", String(isOpen));
+    menuButton.setAttribute("aria-label", isOpen ? "Закрыть меню" : "Открыть меню");
   });
 }
 
@@ -277,6 +283,12 @@ const productQtyInput = document.querySelector("[data-product-qty]");
 const addProductToCartButton = document.querySelector("[data-add-product-to-cart]");
 const productPaletteSection = document.querySelector("[data-product-palette-section]");
 const productPalette = document.querySelector("[data-product-palette]");
+const productColorWrap = document.querySelector("[data-product-color-wrap]");
+const productColorSelect = document.querySelector("[data-product-color]");
+const productRelatedSection = document.querySelector("[data-product-related-section]");
+const productRelated = document.querySelector("[data-product-related]");
+const productBundleSection = document.querySelector("[data-product-bundle-section]");
+const productBundle = document.querySelector("[data-product-bundle]");
 let catalogProducts = [];
 let activeProduct = null;
 let activeProductImageIndex = 0;
@@ -300,6 +312,78 @@ const paletteSwatches = [
   "#843a2d", "#f1f1ef", "#4d2a20", "#587078", "#d6ce51", "#5d2436",
   "#2f3422", "#b7c3a0", "#6f6a54", "#c7c1ad", "#ece7d8", "#1f2531",
   "#7f8a8c", "#a8573d", "#d4c8b1", "#3d3a36", "#9a927d", "#edecef"
+];
+
+const paletteColorMap = {
+  "01-01": "#111111",
+  "12-01": "#f2f0e8",
+  "18-17": "#8e9a74",
+  "26-02": "#c96f3e",
+  "15-01": "#5c5878",
+  "01-02": "#d9d4bf",
+  "04-01": "#843a2d",
+  "50-04": "#f1f1ef",
+  "29-02": "#4d2a20",
+  "19-02": "#587078",
+  "20-01": "#d6ce51",
+  "07-01": "#5d2436",
+  "08-01": "#2f3422",
+  "06-01": "#b7c3a0",
+  "06-03": "#6f6a54",
+  "09-01": "#c7c1ad",
+  "13-02": "#ece7d8",
+  "05-02": "#1f2531",
+  "05-03": "#7f8a8c",
+  "02-01": "#a8573d",
+  "03-02": "#d4c8b1",
+  "14-01": "#3d3a36",
+  "25-02": "#9a927d",
+  "21-02": "#edecef",
+  "13-01": "#f8f7f2",
+  "21-01": "#c9c2b2",
+  "24-02": "#7b7a70",
+  "18-02": "#6f7a58",
+  "15-03": "#b0adc2",
+  "29-01": "#2e211d",
+  "30-02": "#b85b42",
+  "30-03": "#78372f",
+  "04-03": "#b45f51",
+  "23-03": "#c9b78c",
+  "11-02": "#d8d1c0",
+  "09-19": "#6f6a5f",
+  "14-02": "#242424",
+  "20-04": "#bfc34c",
+  "40-02": "#5f6e78"
+};
+
+const clientLogoFiles = [
+  ["vremena", "tg_image_3989927504.png"],
+  ["coffee", "tg_image_1447869406.png"],
+  ["zotov", "tg_image_1234571903.png"],
+  ["m", "tg_image_4181325303.png"],
+  ["redwings", "tg_image_3537173907.png"],
+  ["petrovka", "tg_image_1364855271.png"],
+  ["nordwind", "tg_image_563970880.png"],
+  ["coca", "tg_image_3026766787.png"],
+  ["udcafe", "tg_image_2838859056.png"],
+  ["s7", "tg_image_3442272506.png"],
+  ["ges", "tg_image_4058867904.png"],
+  ["hilton", "tg_image_651713919.png"],
+  ["mega", "tg_image_1442706938.png"],
+  ["orbit", "tg_image_3409320370.png"],
+  ["village", "tg_image_772658286.png"],
+  ["k", "tg_image_2870405133.png"],
+  ["gamaniya", "tg_image_1912927530.png"],
+  ["four", "tg_image_865045888.png"],
+  ["pushkinskiy", "tg_image_2500848194.png"],
+  ["smeg", "tg_image_1780884760.png"],
+  ["odjah", "tg_image_3256931867.png"],
+  ["baltschug", "tg_image_3637814405.png"],
+  ["yandex", "tg_image_1112066948.png"],
+  ["chas", "tg_image_2490350717.png"],
+  ["cosmos", "tg_image_1388588416.png"],
+  ["round", "tg_image_2250273157.png"],
+  ["les", "tg_image_3390093416.png"],
 ];
 
 function productAssetPath(product, value = "") {
@@ -380,24 +464,29 @@ function renderSiteFooter() {
   const root = siteRootPath();
   const year = new Date().getFullYear();
   footer.innerHTML = `
-    <div class="footer-brand-block">
-      <img class="footer-logo" src="${root}assets/brand/uniforms-logo-full-white.png" alt="UNIFORMS">
-      <p>Если у вас есть задача — давайте соберем ее правильно.</p>
+    <div class="footer-left">
+      <div class="footer-brand-block">
+        <img class="footer-logo" src="${root}assets/brand/uniforms-logo-full-white.png" alt="UNIFORMS">
+        <p>Если у вас есть проект — обсудим формат, тираж и сроки.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Разделы сайта">
+        <a href="${root}catalog.html">Каталог</a>
+        <a href="${root}services.html">Услуги</a>
+        <a href="${root}cases.html">Кейсы</a>
+        <a href="${root}interview.html">Интервью</a>
+        <a href="${root}terms.html">Сроки и оплата</a>
+        <a href="${root}privacy.html">Политика конфиденциальности</a>
+        <a href="${root}offer.html">Публичная оферта</a>
+      </nav>
+      <address class="footer-contacts">
+        <a href="mailto:${contactEmail}">${contactEmail}</a>
+        <a href="tel:+79778890318">+7 977 889 03 18</a>
+      </address>
     </div>
-    <nav class="footer-nav" aria-label="Разделы сайта">
-      <a href="${root}terms.html">Сроки и оплата</a>
-      <a href="${root}privacy.html">Политика конфиденциальности</a>
-      <a href="${root}offer.html">Публичная оферта</a>
-      <a href="${root}measurements.html">Как снять мерки</a>
-      <a href="${root}articles.html">Архив статей</a>
-      <a href="${root}vacancies.html">Вакансии</a>
-      <a href="${root}cookies.html">Правила кукис</a>
-    </nav>
-    <address class="footer-contacts">
-      <a href="mailto:${contactEmail}">${contactEmail}</a>
-      <a href="tel:+79778890318">+7 977 889 03 18</a>
+    <a class="footer-map-card" href="https://yandex.ru/maps/?text=${encodeURIComponent("Кутузовский проспект 36с3, офис 527")}" target="_blank" rel="noopener" aria-label="Открыть адрес на карте">
+      <span class="footer-map-thumb" aria-hidden="true"></span>
       <span>Кутузовский проспект 36с3, офис 527</span>
-    </address>
+    </a>
     <p class="footer-copy">© ${year} UNIFORMS</p>
   `;
 }
@@ -431,6 +520,20 @@ function addCartItem(item) {
   const cart = getCart();
   cart.push({ ...item, cartId: `${Date.now()}-${Math.random().toString(16).slice(2)}` });
   saveCart(cart);
+}
+
+function showCartToast(message = "Позиция добавлена в расчёт") {
+  let toast = document.querySelector("[data-cart-toast]");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.className = "cart-toast";
+    toast.setAttribute("data-cart-toast", "");
+    document.body.appendChild(toast);
+  }
+  toast.textContent = protectHangingPrepositions(message);
+  toast.classList.add("is-visible");
+  clearTimeout(showCartToast.timeout);
+  showCartToast.timeout = setTimeout(() => toast.classList.remove("is-visible"), 1800);
 }
 
 function updateCartItem(cartId, updates = {}) {
@@ -543,10 +646,19 @@ function renderPalette(root, colors = []) {
   colors.forEach((code, index) => {
     const chip = document.createElement("span");
     chip.className = "palette-chip";
-    chip.style.setProperty("--swatch", paletteSwatches[index % paletteSwatches.length]);
+    chip.style.setProperty("--swatch", paletteColorMap[code] || paletteSwatches[index % paletteSwatches.length]);
+    chip.setAttribute("title", code);
     chip.textContent = code;
     root.appendChild(chip);
   });
+}
+
+function renderClientLogoGrid() {
+  const root = document.querySelector("[data-client-logo-grid]");
+  if (!root) return;
+  root.innerHTML = clientLogoFiles
+    .map(([key, file]) => `<span class="client-logo-cell client-logo-${key}"><img src="assets/clients/${file}" alt=""></span>`)
+    .join("");
 }
 
 async function discoverProductSlugs() {
@@ -666,6 +778,17 @@ function createProductCard(product) {
     window.location.href = `product.html?product=${encodeURIComponent(product.slug)}`;
   });
   article.appendChild(button);
+  if (Array.isArray(product.palette) && product.palette.length) {
+    const details = document.createElement("details");
+    details.className = "product-card-details";
+    const summary = document.createElement("summary");
+    summary.textContent = "Цвета";
+    const palette = document.createElement("div");
+    palette.className = "product-card-palette";
+    renderPalette(palette, product.palette.slice(0, 12));
+    details.append(summary, palette);
+    article.appendChild(details);
+  }
   return article;
 }
 
@@ -705,7 +828,12 @@ function renderProductPricing(product) {
     row.append(material, run, price);
     productPricing.appendChild(row);
   });
-  if (productPriceNote) productPriceNote.textContent = protectHangingPrepositions(product.priceNote || "");
+  if (productPriceNote) {
+    const note = product.priceNote ? `${product.priceNote} ` : "";
+    productPriceNote.textContent = protectHangingPrepositions(
+      `${note}Стоимость меняется от ткани, тиража и уровня кастомизации.`
+    );
+  }
 }
 
 function renderProductOrderControls(product) {
@@ -732,7 +860,16 @@ function renderProductOrderControls(product) {
   if (productMaterialSelect) {
     productMaterialSelect.onchange = syncQuantityMinimum;
   }
-  if (productPaletteSection) productPaletteSection.hidden = true;
+  if (productColorSelect && productColorWrap) {
+    const colors = Array.isArray(product.palette) ? product.palette : [];
+    productColorSelect.innerHTML = colors.map((code) => `<option value="${code}">${code}</option>`).join("");
+    productColorWrap.hidden = !colors.length;
+  }
+  if (productPaletteSection && productPalette) {
+    const colors = Array.isArray(product.palette) ? product.palette : [];
+    productPaletteSection.hidden = !colors.length;
+    renderPalette(productPalette, colors);
+  }
 }
 
 function selectedProductLine() {
@@ -747,8 +884,10 @@ function selectedProductLine() {
     slug: activeProduct.slug,
     category: activeProduct.category || "",
     title: activeProduct.title,
+    image: productAssetPath(activeProduct, activeProduct.cardImage || activeProduct.images?.[0] || ""),
     material: selected.material || "",
     composition: selected.composition || "",
+    color: productColorSelect?.value || "",
     unitPrice,
     priceType: "perUnit",
     qty,
@@ -853,11 +992,78 @@ function renderProductPageImages(product) {
   });
 }
 
+async function loadProductSummaries() {
+  const slugs = await discoverProductSlugs();
+  const items = await Promise.all(
+    slugs.map(async (slug) => {
+      try {
+        const product = await fetchJson(`${productDirectory}${slug}/product.json`);
+        product.slug = product.slug || slug;
+        return product;
+      } catch (error) {
+        return null;
+      }
+    })
+  );
+  return items.filter(Boolean);
+}
+
+function productGroup(product = {}) {
+  const text = [product.slug, product.title, product.cardTitle, product.cardMeta, product.category].join(" ").toLowerCase();
+  if (/футбол|лонгслив|бадлон|sleeve|shirt/.test(text)) return "tops";
+  if (/худи|свитшот|олимп|hoodie|sweat/.test(text)) return "sweats";
+  if (/брюк|pants|trousers/.test(text)) return "bottoms";
+  if (/рубаш|shirt/.test(text)) return "shirts";
+  if (/жилет|vest/.test(text)) return "vests";
+  if (/куртк|анорак|ветров|jacket|outer/.test(text)) return "outer";
+  if (/шап|кепк|шарф|нос|перчат|тоут|шоппер|accessor/.test(text)) return "accessories";
+  return product.category?.includes("classic") ? "classic" : "merch";
+}
+
+function bundleTargetsFor(product = {}, productsList = []) {
+  const group = productGroup(product);
+  const targetGroups = {
+    tops: ["sweats", "bottoms", "vests"],
+    sweats: ["tops", "bottoms", "accessories"],
+    bottoms: ["tops", "sweats", "shirts"],
+    shirts: ["bottoms", "vests"],
+    vests: ["tops", "shirts", "bottoms"],
+    outer: ["tops", "bottoms", "accessories"],
+    accessories: ["tops", "sweats", "outer"],
+  }[group] || ["tops", "bottoms"];
+  return productsList.filter((item) => item.slug !== product.slug && targetGroups.includes(productGroup(item))).slice(0, 4);
+}
+
+function renderProductLinkList(root, section, productsList = []) {
+  if (!root || !section) return;
+  root.innerHTML = "";
+  productsList.forEach((item) => {
+    const link = document.createElement("a");
+    link.href = `product.html?product=${encodeURIComponent(item.slug)}`;
+    link.innerHTML = `
+      <span>${protectHangingPrepositions(item.code || item.slug || "")}</span>
+      <strong>${protectHangingPrepositions(item.cardTitle || item.title || "")}</strong>
+    `;
+    root.appendChild(link);
+  });
+  section.hidden = !productsList.length;
+}
+
+async function renderProductRelated(product) {
+  if (!productRelatedSection && !productBundleSection) return;
+  const productsList = await loadProductSummaries();
+  const explicitRelated = Array.isArray(product.related) && product.related.length
+    ? productsList.filter((item) => product.related.includes(item.slug))
+    : productsList.filter((item) => item.slug !== product.slug && productGroup(item) === productGroup(product)).slice(0, 4);
+  renderProductLinkList(productRelated, productRelatedSection, explicitRelated);
+  renderProductLinkList(productBundle, productBundleSection, bundleTargetsFor(product, productsList));
+}
+
 async function loadProductPage() {
   if (!productPage) return;
   const slug = new URLSearchParams(window.location.search).get("product");
   if (!slug) {
-    if (productPageStatus) productPageStatus.textContent = "Позиция каталога не выбрана.";
+    if (productPageStatus) productPageStatus.textContent = "Модель не выбрана.";
     return;
   }
 
@@ -879,12 +1085,13 @@ async function loadProductPage() {
     renderProductPricing(product);
     renderProductOrderControls(product);
     renderProductPageImages(product);
+    await renderProductRelated(product);
     if (productPageStatus) productPageStatus.hidden = true;
     if (productPageLayout) productPageLayout.hidden = false;
     protectTextNodes(productPageLayout || document.body);
   } catch (error) {
     console.warn("Product page was not loaded", error);
-    if (productPageStatus) productPageStatus.textContent = "Позиция каталога не найдена.";
+    if (productPageStatus) productPageStatus.textContent = "Модель не найдена.";
   }
 }
 
@@ -904,9 +1111,10 @@ addProductToCartButton?.addEventListener("click", () => {
   const line = selectedProductLine();
   if (!line) return;
   addCartItem(line);
-  addProductToCartButton.textContent = "Добавлено в калькулятор";
+  showCartToast("Позиция добавлена в расчёт");
+  addProductToCartButton.textContent = "Изделие добавлено в проект";
   setTimeout(() => {
-    addProductToCartButton.textContent = "Добавить в калькулятор";
+    addProductToCartButton.textContent = "Собрать это изделие в проект";
   }, 1400);
 });
 
@@ -959,9 +1167,11 @@ function createOfferOptionCard(item, section) {
   const article = document.createElement("article");
   article.className = "offer-option-card";
   const minRun = item.minRunLabel || (item.minRun ? `от ${item.minRun} ед.` : "");
+  const image = item.image || item.images?.[0] || "";
   const isBaseIncluded = baseIncludedOptionIds.some(([baseSection, id]) => baseSection === section && id === item.id);
   const isRequiredStage = (section === "preproduction" && ["material-map", "sample"].includes(item.id)) || isBaseIncluded;
   article.innerHTML = `
+    ${image ? `<figure class="offer-option-card-media"><img src="${image}" alt="${protectHangingPrepositions(item.title || "")}"></figure>` : ""}
     <div>
       <p class="kicker">${protectHangingPrepositions(minRun || section)}</p>
       <h4>${protectHangingPrepositions(item.title || "")}</h4>
@@ -970,7 +1180,7 @@ function createOfferOptionCard(item, section) {
     </div>
     <div class="offer-option-card-bottom">
       <span>${protectHangingPrepositions(item.note || formatMoney(item.price || 0))}</span>
-      <button type="button"${isRequiredStage ? " disabled" : ""}>${isRequiredStage ? "Учтено" : "Добавить"}</button>
+      <button type="button"${isRequiredStage ? " disabled" : ""}>${isRequiredStage ? "Уже в базе" : "Применить к проекту"}</button>
     </div>
   `;
   if (isRequiredStage) return article;
@@ -990,9 +1200,10 @@ function createOfferOptionCard(item, section) {
       note: item.note || "",
       appliesTo: "",
     });
-    article.querySelector("button").textContent = "Добавлено";
+    showCartToast("Услуга добавлена в расчёт");
+    article.querySelector("button").textContent = "Применено";
     setTimeout(() => {
-      article.querySelector("button").textContent = "Добавить";
+      article.querySelector("button").textContent = "Применить к проекту";
     }, 1200);
   });
   return article;
@@ -1126,7 +1337,7 @@ function includedOptionsMarkup(offer = {}) {
           `
         )
         .join("")}
-      <em>При замене выберите платную альтернативу в поле «Добавить услугу».</em>
+      <em>При замене выберите платную альтернативу в поле «Применить услугу».</em>
     </div>
   `;
 }
@@ -1148,6 +1359,7 @@ function addOptionToProduct(productItem, option) {
     note: option.note || "",
     appliesTo: productItem.cartId,
   });
+  showCartToast("Услуга добавлена к изделию");
 }
 
 function optionSelectMarkup(productItem, offer) {
@@ -1156,19 +1368,28 @@ function optionSelectMarkup(productItem, offer) {
     .filter((item) => !(item.priceType === "perUnit" && Number(item.price || 0) === 0))
     .filter((item) => optionApplicableToProduct(item, productItem));
   if (!options.length) return "";
+  const grouped = options.reduce((acc, item) => {
+    (acc[item.section] ||= []).push(item);
+    return acc;
+  }, {});
   return `
-    <label class="cart-inline-select">
-      Добавить услугу
-      <select data-add-option-select="${productItem.cartId}">
-        <option value="">Выбрать</option>
-        ${options
-          .map(
-            (item) =>
-              `<option value="${item.section}:${item.id}">${protectHangingPrepositions(item.groupTitle)} · ${protectHangingPrepositions(item.title || "")} · ${protectHangingPrepositions(item.note || "")}</option>`
-          )
-          .join("")}
-      </select>
-    </label>
+    <div class="cart-service-groups">
+      ${Object.entries(grouped)
+        .map(
+          ([section, items]) => `
+            <label class="cart-inline-select">
+              ${protectHangingPrepositions(labelForSection(section))}
+              <select data-add-option-select="${productItem.cartId}">
+                <option value="">Применить к изделию</option>
+                ${items
+                  .map((item) => `<option value="${item.section}:${item.id}">${protectHangingPrepositions(item.title || "")} · ${protectHangingPrepositions(item.note || "")}</option>`)
+                  .join("")}
+              </select>
+            </label>
+          `
+        )
+        .join("")}
+    </div>
   `;
 }
 
@@ -1211,17 +1432,19 @@ async function renderCartPage() {
   const looseOptions = cart.filter((item) => item.type === "option" && !item.appliesTo);
   root.innerHTML = "";
   if (!cart.length) {
-    root.innerHTML = `<p class="cart-empty">Калькулятор пока пустой. Добавьте позиции из каталога, услуги, брендирование или упаковку.</p>`;
+    root.innerHTML = `<p class="cart-empty">Калькулятор пока пустой. Выберите модель, материал и услуги, чтобы собрать ориентир проекта.</p>`;
   }
   productLines.forEach((item) => {
     const article = document.createElement("article");
     article.className = "cart-line cart-product-line";
+    if (item.image) article.classList.add("has-thumb");
     const detail = [item.material, item.composition, item.note].filter(Boolean).join(" · ");
     article.innerHTML = `
+      ${item.image ? `<figure class="cart-line-thumb"><img src="${item.image}" alt=""></figure>` : ""}
       <div>
         <p class="kicker">Изделие</p>
         <h3>${protectHangingPrepositions(item.title || "")}</h3>
-        <p>${protectHangingPrepositions(detail)}</p>
+        <p>${protectHangingPrepositions([detail, item.color ? `цвет ${item.color}` : ""].filter(Boolean).join(" · "))}</p>
         <div class="cart-line-controls">
           ${productMaterialMarkup(item)}
           <label class="cart-inline-select">
@@ -1258,13 +1481,13 @@ async function renderCartPage() {
         qty,
       });
     });
-    article.querySelector("[data-add-option-select]")?.addEventListener("change", (event) => {
+    article.querySelectorAll("[data-add-option-select]").forEach((select) => select.addEventListener("change", (event) => {
       const [section, id] = event.target.value.split(":");
       const option = allOfferOptions(offer).find((entry) => entry.section === section && entry.id === id);
       if (!option) return;
       addOptionToProduct(item, option);
       renderCartPage();
-    });
+    }));
     root.appendChild(article);
     const attachedRoot = article.querySelector(`[data-attached-options="${item.cartId}"]`);
     productOptions(item.cartId, cart).forEach((option) => {
@@ -1345,7 +1568,7 @@ async function renderCartPage() {
       <div><dt>Опции и услуги</dt><dd>${formatMoney(optionTotal)}</dd></div>
       <div><dt>Итог</dt><dd>${formatMoney(total)}</dd></div>
     </dl>
-    <p class="cart-stage-note">В расчет автоматически добавлен обязательный предтиражный образец: стоимость за единицу в партии + 100%. Карта образцов материалов учитывается как бесплатный этап.</p>
+    <p class="cart-stage-note">Это предварительный ориентир. Финальный расчёт зависит от деталей проекта, сроков, материалов и производства. В расчёт автоматически добавлен обязательный предтиражный образец: стоимость за единицу в партии + 100%.</p>
   `;
   if (payload) {
     payload.value = [
@@ -1445,8 +1668,57 @@ function attachInterviewLookCaptions() {
   });
 }
 
+function initHomeHeroRotator() {
+  const images = Array.from(document.querySelectorAll("[data-home-hero-image]"));
+  if (images.length < 2) return;
+  let index = images.findIndex((image) => image.classList.contains("is-active"));
+  if (index < 0) index = 0;
+  setInterval(() => {
+    images[index]?.classList.remove("is-active");
+    index = (index + 1) % images.length;
+    images[index]?.classList.add("is-active");
+  }, 4200);
+}
+
+function renderCaseContactBlock() {
+  const main = document.querySelector(".ssense-article-page");
+  if (!main || !document.body.dataset.contentPage?.startsWith("cases/") || document.querySelector("[data-case-contact]")) return;
+  const section = document.createElement("section");
+  section.className = "case-contact-block";
+  section.setAttribute("data-case-contact", "");
+  section.innerHTML = `
+    <div>
+      <p class="kicker">Следующий шаг</p>
+      <h2>Обсудить похожий проект</h2>
+      <p>Если у вас похожий проект, разберём модель, материалы, сроки и тираж.</p>
+      <div class="case-social-links">
+        <a href="mailto:${contactEmail}">Email</a>
+        <a href="tel:+79778890318">Телефон</a>
+        <a href="https://yandex.ru/maps/?text=${encodeURIComponent("Кутузовский проспект 36с3, офис 527")}" target="_blank" rel="noopener">Карта</a>
+      </div>
+    </div>
+    <form class="feedback-form case-contact-form" action="mailto:${contactEmail}" method="post" enctype="text/plain" data-contact-form>
+      <label>Имя<input name="Имя" type="text" autocomplete="name"></label>
+      <label>Контакт<input name="Контакт" type="text" autocomplete="email"></label>
+      <label>Комментарий<textarea name="Комментарий" rows="5"></textarea></label>
+      <button class="outline-button" type="submit">Обсудить похожий проект</button>
+      <p class="form-success" data-form-success hidden>Мы свяжемся с вами в течение 1 рабочего дня.</p>
+    </form>
+  `;
+  section.querySelector("[data-contact-form]")?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    event.currentTarget.reset();
+    const success = event.currentTarget.querySelector("[data-form-success]");
+    if (success) success.hidden = false;
+  });
+  const switcher = main.querySelector(".article-switcher");
+  main.insertBefore(section, switcher || null);
+}
+
 contentReady.finally(() => {
   renderSiteFooter();
+  renderClientLogoGrid();
+  renderCaseContactBlock();
   initCookieNotice();
   ensureMobileCartLink();
   attachInterviewLookCaptions();
@@ -1459,4 +1731,5 @@ contentReady.finally(() => {
   styleYoGlyphs();
   initCaptionStackSync();
   initHero();
+  initHomeHeroRotator();
 });

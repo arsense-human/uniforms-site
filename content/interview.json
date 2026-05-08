@@ -1,27 +1,27 @@
 {
   "version": 1,
-  "title": "Интервью",
+  "title": "Подход",
   "fields": [
     {
       "section": "Шапка статьи",
       "label": "Рубрика",
       "type": "text",
       "selector": "[data-edit=\"article-category\"]",
-      "value": "Интервью"
+      "value": "Подход"
     },
     {
       "section": "Шапка статьи",
       "label": "Заголовок",
       "type": "text",
       "selector": "[data-edit=\"article-title\"]",
-      "value": "Интервью с командой UNIFORMS"
+      "value": "Как мы работаем"
     },
     {
       "section": "Шапка статьи",
       "label": "Подзаголовок",
       "type": "textarea",
       "selector": "[data-edit=\"article-dek\"]",
-      "value": "Большой разговор с командой о рынке, \nпродукте и производстве."
+      "value": "Разговор с командой о рынке, продукте и производстве как вход в подход UNIFORMS."
     },
     {
       "section": "Шапка статьи",

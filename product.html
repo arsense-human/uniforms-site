@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>UNIFORMS — Позиция каталога</title>
-    <link rel="stylesheet" href="styles.css?v=calculator-logic-20260501e">
-  </head>
+    <title>UNIFORMS — Модель каталога</title>
+    <link rel="stylesheet" href="styles.css?v=desktop-gaps-100-20260508">
+    <link rel="stylesheet" href="header-overrides.css?v=desktop-gaps-100-20260508">
+</head>
   <body data-product-page>
     <header class="site-header" data-header>
       <a class="brand" href="index.html#top" aria-label="UNIFORMS">
@@ -14,14 +15,14 @@
       <nav class="main-nav" aria-label="Основная навигация">
         <a href="catalog.html">Каталог</a>
         <a href="services.html">Услуги</a>
-        <a href="index.html#cases">Кейсы</a>
+        <a href="cases.html">Статьи</a>
         <a href="interview.html">Интервью</a>
         <a class="cart-nav-link" href="cart.html">Калькулятор <span data-cart-count>0</span></a>
       </nav>
       <button class="menu-button" type="button" data-menu-toggle aria-label="Открыть меню">Меню</button>
     </header>
     <main class="product-page">
-      <p class="product-page-status" data-product-page-status>Загрузка позиции каталога</p>
+      <p class="product-page-status" data-product-page-status>Загрузка модели</p>
       <article class="product-page-layout" data-product-page-layout hidden>
         <aside class="product-page-copy">
           <a class="product-page-back" href="catalog.html">Назад в каталог</a>
@@ -37,13 +38,14 @@
           <dl class="product-detail-specs" data-product-specs></dl>
           <dl class="product-detail-production" data-product-production></dl>
           <section class="product-palette" data-product-palette-section hidden>
-            <p class="kicker">Палитра</p>
+            <p class="kicker">Доступные цвета</p>
             <div class="palette-grid" data-product-palette></div>
           </section>
           <section class="product-order-builder" aria-label="Собрать позицию">
             <label>Материал<select data-product-material></select></label>
+            <label data-product-color-wrap hidden>Цвет<select data-product-color></select></label>
             <label>Тираж<input data-product-qty type="number" min="1" step="1" value="50"></label>
-            <button class="product-request-button" type="button" data-add-product-to-cart>Добавить в калькулятор</button>
+            <button class="product-request-button" type="button" data-add-product-to-cart>Собрать это изделие в проект</button>
           </section>
           <section class="product-pricing" data-product-pricing-section hidden>
             <button class="product-pricing-toggle" type="button" data-product-pricing-toggle>Материалы и цена</button>
@@ -58,7 +60,15 @@
             </div>
           </section>
           <button class="product-measure-button" type="button" data-measurements-open>Замеры изделия</button>
-          <button class="product-request-button" type="button" data-product-request>Собрать запрос без калькулятора</button>
+          <button class="product-request-button" type="button" data-product-request>Обсудить этот вариант без расчёта</button>
+          <section class="product-related-block" data-product-related-section hidden>
+            <p class="kicker">Рядом с этой моделью</p>
+            <div class="product-related-list" data-product-related></div>
+          </section>
+          <section class="product-related-block" data-product-bundle-section hidden>
+            <p class="kicker">Можно собрать вместе</p>
+            <div class="product-related-list" data-product-bundle></div>
+          </section>
         </aside>
       </article>
     </main>
@@ -81,16 +91,16 @@
     <dialog class="product-page-dialog" data-product-form-dialog>
       <button class="dialog-close" type="button" data-product-form-close aria-label="Закрыть">Закрыть</button>
       <form class="b2b-contact-form product-page-form" action="mailto:zakaz@uniforms.ru" method="post" enctype="text/plain" data-contact-form data-product-form>
-        <p class="kicker">Обратная связь</p>
-        <h3>Собрать запрос</h3>
+        <p class="kicker">Запрос</p>
+        <h3>Обсудить вариант</h3>
         <input name="Модель" type="hidden" data-product-form-model>
         <label>Имя<input name="Имя" type="text" autocomplete="name"></label>
         <label>Контакт<input name="Контакт" type="text" autocomplete="email"></label>
         <label>Комментарий<textarea name="Комментарий" rows="5"></textarea></label>
-        <button class="text-submit" type="submit">Получить расчет</button>
+        <button class="text-submit" type="submit">Описать проект</button>
         <p class="form-success" data-form-success hidden>Мы свяжемся с вами в течение 1 рабочего дня.</p>
       </form>
     </dialog>
-    <script src="app.js?v=calculator-logic-20260501e"></script>
+    <script src="app.js?v=desktop-gaps-100-20260508"></script>
   </body>
 </html>

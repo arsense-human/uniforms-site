@@ -52,7 +52,7 @@
     {
       "id": "material-map",
       "title": "Карта образцов материалов",
-      "description": "Нарезка актуальной подборки от поставщиков под запрос",
+      "description": "Понять доступные ткани и цвета до выбора модели и запуска расчёта",
       "minRun": 30,
       "priceType": "fixed",
       "price": 0,
@@ -60,8 +60,8 @@
     },
     {
       "id": "sample",
-      "title": "Пошив предтиражного образца",
-      "description": "Сигнальный образец перед запуском партии",
+      "title": "Проверка изделия до запуска партии",
+      "description": "Проверить изделие до запуска партии и избежать ошибок в тираже",
       "minRun": 30,
       "priceType": "sampleMultiplier",
       "multiplier": 2,
@@ -73,7 +73,7 @@
       {
         "id": "material-map",
         "title": "Карта образцов материалов",
-        "description": "Нарезка актуальной подборки от поставщиков под ваш запрос",
+        "description": "Понять доступные ткани и цвета до выбора модели и запуска расчёта",
         "minRun": 30,
         "priceType": "fixed",
         "price": 0,
@@ -81,8 +81,8 @@
       },
       {
         "id": "sample",
-        "title": "Пошив предтиражного образца",
-        "description": "Сигнальный образец перед запуском партии",
+        "title": "Проверка изделия до запуска партии",
+        "description": "Проверить изделие до запуска партии и избежать ошибок в тираже",
         "minRun": 30,
         "priceType": "sampleMultiplier",
         "multiplier": 2,
@@ -90,8 +90,8 @@
       },
       {
         "id": "size-run-sample",
-        "title": "Пошив размерного ряда образцов",
-        "description": "Для примерки всем коллективом перед заказом градации тиража",
+        "title": "Проверка размерного ряда до партии",
+        "description": "Проверить посадку на команде до запуска основной партии",
         "minRun": 100,
         "priceType": "unitMultiplier",
         "multiplier": 1.5,
@@ -99,8 +99,8 @@
       },
       {
         "id": "adapt-model",
-        "title": "Адаптация нашей модели под запрос",
-        "description": "Доработка конструкции на существующей модельной базе",
+        "title": "Адаптация базовой модели под задачу",
+        "description": "Подстроить базовую модель под задачу, команду и сценарий носки",
         "minRun": 30,
         "priceType": "unitMultiplier",
         "multiplier": 3,
@@ -108,8 +108,8 @@
       },
       {
         "id": "new-model",
-        "title": "Разработка новой модели",
-        "description": "Изготовление модели в новой категории или в другом крое",
+        "title": "Разработка изделия с нуля",
+        "description": "Собрать изделие с нуля, когда базовой модели недостаточно",
         "minRun": 100,
         "priceType": "fixed",
         "price": 10000,
@@ -117,8 +117,8 @@
       },
       {
         "id": "brand-layout",
-        "title": "Адаптация макета для брендирования",
-        "description": "Доработка вашего макета нашим дизайнером под задачи проекта",
+        "title": "Подготовка графики к производству",
+        "description": "Подготовить графику к производству и избежать ошибок в нанесении",
         "minRun": 30,
         "priceType": "perUnit",
         "price": 2000,
@@ -126,8 +126,8 @@
       },
       {
         "id": "design-concept",
-        "title": "Разработка дизайн-концепции",
-        "description": "От идеи до графического наполнения",
+        "title": "Разработка дизайн-концепции проекта",
+        "description": "Сформировать визуальную логику проекта до запуска производства",
         "minRun": 100,
         "priceType": "fixed",
         "price": 50000,
@@ -138,7 +138,7 @@
       {
         "id": "dye-tone",
         "title": "Выкрас оттенка",
-        "description": "Один цвет, 2-3 варианта оттенка",
+        "description": "Сравнить 2-3 оттенка и выбрать точное попадание до партии",
         "minRunLabel": "образец",
         "priceType": "fixed",
         "price": 6000,
@@ -147,7 +147,7 @@
       {
         "id": "dye-sample",
         "title": "Выкрас образца",
-        "description": "Одно изделие в выбранный оттенок",
+        "description": "Проверить выбранный оттенок на реальном изделии",
         "minRunLabel": "образец",
         "priceType": "fixed",
         "price": 6000,
@@ -156,7 +156,7 @@
       {
         "id": "dye-350",
         "title": "Изделия весом до 350 г / ед.",
-        "description": "Футболки; лонги; рубашки; сумки.",
+        "description": "Адаптировать лёгкие изделия под нужный цвет проекта.",
         "minRun": 50,
         "priceType": "perUnit",
         "price": 500,
@@ -165,7 +165,7 @@
       {
         "id": "dye-700",
         "title": "Изделия весом до 700 г / ед.",
-        "description": "Свитшоты; худи; плотные рубашки.",
+        "description": "Собрать единый оттенок для изделий средней плотности.",
         "minRun": 30,
         "priceType": "perUnit",
         "price": 800,
@@ -174,7 +174,7 @@
       {
         "id": "dye-1000",
         "title": "Изделия весом до 1000 г / ед.",
-        "description": "Плотные свитшоты, худи; куртки.",
+        "description": "Настроить цвет на плотных изделиях без потери характера материала.",
         "minRun": 20,
         "priceType": "perUnit",
         "price": 1200,
@@ -185,7 +185,7 @@
       {
         "id": "wash-tone",
         "title": "Выкрас оттенка",
-        "description": "Один цвет, 2-3 варианта оттенка",
+        "description": "Проверить, как эффект варки меняет оттенок и фактуру",
         "minRunLabel": "образец",
         "priceType": "fixed",
         "price": 6000,
@@ -194,7 +194,7 @@
       {
         "id": "wash-sample",
         "title": "Выкрас образца",
-        "description": "Одно изделие в выбранный оттенок",
+        "description": "Увидеть эффект на реальном изделии до запуска партии",
         "minRunLabel": "образец",
         "priceType": "fixed",
         "price": 6000,
@@ -203,7 +203,7 @@
       {
         "id": "wash-350",
         "title": "Изделия весом до 350 г / ед.",
-        "description": "Футболки; лонги; рубашки; сумки.",
+        "description": "Настроить лёгким изделиям нужную фактуру и настроение.",
         "minRun": 50,
         "priceType": "perUnit",
         "price": 400,
@@ -212,7 +212,7 @@
       {
         "id": "wash-700",
         "title": "Изделия весом до 700 г / ед.",
-        "description": "Свитшоты; худи; плотные рубашки.",
+        "description": "Настроить эффект варки для изделий средней плотности.",
         "minRun": 30,
         "priceType": "perUnit",
         "price": 700,
@@ -221,7 +221,7 @@
       {
         "id": "wash-1000",
         "title": "Изделия весом до 1000 г / ед.",
-        "description": "Плотные свитшоты, худи; куртки.",
+        "description": "Изменить характер плотной вещи и сохранить читаемость формы.",
         "minRun": 20,
         "priceType": "perUnit",
         "price": 1000,
@@ -234,6 +234,7 @@
       "id": "embroidery",
       "title": "Вышивка",
       "description": "Челночная / тамбурная / бисер / пайетки / аппликация",
+      "image": "assets/branding/вышивка.png",
       "minRun": 30,
       "size": "10×10 см, 1 цвет",
       "priceType": "perUnit",
@@ -244,6 +245,7 @@
       "id": "silkscreen",
       "title": "Шелкография",
       "description": "Пластизоль / водная / вытравка / пафф / глиттер",
+      "image": "assets/branding/водная.png",
       "minRun": 50,
       "size": "A4 / A3, 1 цвет",
       "priceType": "perUnit",
@@ -254,6 +256,7 @@
       "id": "digital-print",
       "title": "Цифровая печать",
       "description": "DTF / прямая печать / сублимация",
+      "image": "assets/branding/дтф.png",
       "minRun": 30,
       "size": "10×10 см, полноцвет",
       "priceType": "perUnit",
@@ -264,6 +267,7 @@
       "id": "transfer",
       "title": "Термотрансфер",
       "description": "Голография / флекс / рефлектив / софттач / одноцвет",
+      "image": "assets/branding/флекс.png",
       "minRun": 30,
       "size": "10×10 см, 1 цвет",
       "priceType": "perUnit",
@@ -274,6 +278,7 @@
       "id": "label",
       "title": "Бирка",
       "description": "Жаккард / ПВХ / сатин / репс / хлопок",
+      "image": "assets/branding/жаккард.png",
       "minRun": 100,
       "size": "3×3 см, 2 цвета",
       "priceType": "perUnit",
@@ -295,6 +300,7 @@
     {
       "id": "shopper",
       "title": "Шоппер",
+      "image": "assets/accesories/шоппер.png",
       "minRun": 100,
       "priceType": "perUnit",
       "price": 500,
@@ -303,6 +309,7 @@
     {
       "id": "tote",
       "title": "Тоут",
+      "image": "assets/accesories/тоут.png",
       "minRun": 50,
       "priceType": "perUnit",
       "price": 1500,
@@ -318,7 +325,8 @@
     },
     {
       "id": "cap",
-      "title": "Бейсболка",
+      "title": "Кепка",
+      "image": "assets/accesories/кепка шашечка.png",
       "minRun": 30,
       "priceType": "perUnit",
       "price": 1000,
@@ -327,6 +335,11 @@
     {
       "id": "beanie",
       "title": "Шапка бини",
+      "image": "assets/accesories/бини лого.png",
+      "images": [
+        "assets/accesories/бини лого.png",
+        "assets/accesories/бини шашаечка.png"
+      ],
       "minRun": 100,
       "priceType": "perUnit",
       "price": 1000,
@@ -343,6 +356,7 @@
     {
       "id": "scarf",
       "title": "Шарф",
+      "image": "assets/accesories/шарф шашечка.png",
       "minRun": 100,
       "priceType": "perUnit",
       "price": 2000,
@@ -351,6 +365,7 @@
     {
       "id": "socks",
       "title": "Носки",
+      "image": "assets/accesories/носки шашечка.png",
       "minRun": 100,
       "priceType": "perUnit",
       "price": 500,
@@ -359,6 +374,7 @@
     {
       "id": "gloves",
       "title": "Перчатки",
+      "image": "assets/accesories/перчатки шашечка.png",
       "minRun": 50,
       "priceType": "perUnit",
       "price": 2000,
@@ -399,6 +415,7 @@
     {
       "id": "snood",
       "title": "Снуд",
+      "image": "assets/accesories/снуд шашека.png",
       "minRun": 100,
       "priceType": "perUnit",
       "price": 1000,
@@ -410,6 +427,7 @@
       "id": "zip-basic",
       "title": "Матовый зип-пакет с маркировкой",
       "description": "Плотный пакет и стикер с информацией",
+      "image": "assets/package/зип-пакет +стикер.png",
       "minRun": 1,
       "priceType": "perUnit",
       "price": 0,
@@ -419,6 +437,7 @@
       "id": "zip-branded",
       "title": "Зип-пакет брендированный",
       "description": "С принтом вашего фирменного стиля",
+      "image": "assets/package/зип-пакет +принт.png",
       "minRun": 100,
       "priceType": "perUnit",
       "price": 80,
@@ -428,6 +447,7 @@
       "id": "box-branded",
       "title": "Коробка брендированная",
       "description": "Складной гофрокороб с принтом",
+      "image": "assets/package/гофрокороб шашечка.png",
       "minRun": 100,
       "priceType": "perUnit",
       "price": 200,
@@ -437,6 +457,7 @@
       "id": "dustbag",
       "title": "Пыльник",
       "description": "Тканевая сумка для продукции",
+      "image": "assets/package/пыльник лого.png",
       "minRun": 50,
       "priceType": "perUnit",
       "price": 500,
